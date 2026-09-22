@@ -6,12 +6,46 @@
     <title>IMI - Ultrassom Dermatológico de Alta Resolução & Mapeamento de Injetáveis em Maringá</title>
     <meta name="description" content="Instituto Maringá de Imagem (+70 anos de tradição). Mapeamento vascular, ultrassom dermatológico de alta frequência (20-22 MHz) para preenchedores, bioestimuladores e segurança em procedimentos estéticos.">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.imidiagnostico.com.br/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.imidiagnostico.com.br/">
+    <meta property="og:title" content="IMI - Ultrassom Dermatológico de Alta Resolução em Maringá">
+    <meta property="og:description" content="Mapeamento vascular e ultrassom dermatológico de alta frequência (20-22 MHz) para segurança em procedimentos estéticos. +70 anos de tradição.">
+    <meta property="og:image" content="https://www.imidiagnostico.com.br/imgs/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="IMI Diagnóstico">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.imidiagnostico.com.br/">
+    <meta name="twitter:title" content="IMI - Ultrassom Dermatológico de Alta Resolução em Maringá">
+    <meta name="twitter:description" content="Mapeamento vascular e ultrassom dermatológico de alta frequência (20-22 MHz) para segurança em procedimentos estéticos.">
+    <meta name="twitter:image" content="https://www.imidiagnostico.com.br/imgs/twitter-image.jpg">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Author -->
+    <meta name="author" content="Instituto Carlos Américo de Imagem">
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="ultrassom dermatológico, mapeamento vascular, Maringá, preenchedores, bioestimuladores, ácido hialurônico, ultrassom de alta frequência, IMI, instituto de imagem">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0D131A">
+    <meta name="msapplication-TileColor" content="#0D131A">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome 6 -->
+    <!-- FontAwesome 6 (preload for performance) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS CDN -->
@@ -19,6 +53,81 @@
     
     <!-- Alpine.js for lightweight interaction -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Schema.org JSON-LD Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Instituto Maringá de Imagem - IMI",
+      "alternateName": "IMI Diagnóstico",
+      "url": "https://www.imidiagnostico.com.br/",
+      "logo": "https://www.imidiagnostico.com.br/imgs/design(9).png",
+      "description": "Instituto de diagnóstico por imagem especializado em ultrassom dermatológico de alta resolução e mapeamento vascular para procedimentos estéticos.",
+      "foundingDate": "1950",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Curitiba, 211 - Zona 04",
+        "addressLocality": "Maringá",
+        "addressRegion": "PR",
+        "postalCode": "87014-130",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-23.4254",
+        "longitude": "-51.9387"
+      },
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+55-44-3033-5500",
+        "contactType": "customer service",
+        "availableLanguage": ["Portuguese"],
+        "areaServed": "BR"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/imidiagnostico",
+        "https://www.instagram.com/imidiagnostico"
+      ],
+      "medicalSpecialty": ["Radiology", "Dermatology"],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "06:45",
+        "closes": "23:00"
+      }, {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "06:45",
+        "closes": "20:00"
+      }, {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "06:45",
+        "closes": "17:00"
+      }]
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.imidiagnostico.com.br/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Ultrassom Dermatológico",
+        "item": "https://www.imidiagnostico.com.br/#o-exame"
+      }]
+    }
+    </script>
+</head>
 
     <script>
         tailwind.config = {
@@ -156,15 +265,12 @@
     <div class="ribbon-bar w-full fixed top-0 z-50"></div>
 
     <!-- FLOATING GLASSMORPHIC NAVBAR -->
-    <header class="fixed top-3 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <nav class="glass-nav rounded-full px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
+    <header class="fixed top-3 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" role="banner">
+        <nav class="glass-nav rounded-full px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300" role="navigation" aria-label="Menu principal">
             
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-imi-card border border-slate-700/60 group-hover:border-imi-cyan transition-colors">
-                    <span class="font-display font-extrabold text-xl text-imi-cyan tracking-tighter">IMI</span>
-                    <span class="absolute -bottom-0.5 w-6 h-0.5 bg-imi-ribbon rounded-full"></span>
-                </div>
+            <a href="#" class="flex items-center gap-3 group" aria-label="IMI Diagnóstico - Página Inicial">
+                <img src="imgs/design(9).png" alt="Logotipo IMI Diagnóstico" class="w-10 h-10 object-contain" aria-hidden="false">
                 <div class="flex flex-col">
                     <span class="font-display font-bold text-sm tracking-tight text-white leading-tight">IMI DIAGNÓSTICO</span>
                     <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Instituto Carlos Américo de Imagem</span>
@@ -172,58 +278,65 @@
             </a>
 
             <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#o-exame" class="hover:text-imi-cyan transition-colors">O Exame</a>
-                <a href="#aplicacoes" class="hover:text-imi-cyan transition-colors">Aplicações Clínicas</a>
-                <a href="#diferenciais" class="hover:text-imi-cyan transition-colors">Diferenciais</a>
-                <a href="#para-medicos" class="hover:text-imi-cyan transition-colors flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-imi-orange animate-pulse"></span>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300" role="menubar" aria-label="Links de navegação">
+                <a href="#o-exame" class="hover:text-imi-cyan transition-colors" role="menuitem">O Exame</a>
+                <a href="#aplicacoes" class="hover:text-imi-cyan transition-colors" role="menuitem">Aplicações Clínicas</a>
+                <a href="#diferenciais" class="hover:text-imi-cyan transition-colors" role="menuitem">Diferenciais</a>
+                <a href="#para-medicos" class="hover:text-imi-cyan transition-colors flex items-center gap-1.5" role="menuitem">
+                    <span class="w-1.5 h-1.5 rounded-full bg-imi-orange animate-pulse" aria-hidden="true"></span>
                     Para Médicos
                 </a>
-                <a href="#duvidas" class="hover:text-imi-cyan transition-colors">FAQ</a>
+                <a href="#duvidas" class="hover:text-imi-cyan transition-colors" role="menuitem">FAQ</a>
             </div>
 
             <!-- Header Action Button -->
             <div class="hidden sm:flex items-center gap-3">
-                <a href="#agendamento" class="btn-hover-swap bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-cyan-glow transition-all duration-300">
+                <a href="#agendamento" class="btn-hover-swap bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-cyan-glow transition-all duration-300" aria-label="Agendar exame com encaminhamento">
                     <span class="btn-text-default">
                         Agendar Exame
-                        <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                        <i class="fa-solid fa-chevron-right ml-2 text-xs" aria-hidden="true"></i>
                     </span>
                     <span class="btn-text-hover">
                         Com Encaminhamento
-                        <i class="fa-solid fa-angles-right ml-2 text-xs animate-double-arrow"></i>
+                        <i class="fa-solid fa-angles-right ml-2 text-xs animate-double-arrow" aria-hidden="true"></i>
                     </span>
                 </a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir Menu">
-                <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'"></i>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" 
+                    class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-imi-cyan" 
+                    aria-label="Abrir menu de navegação"
+                    :aria-expanded="mobileMenuOpen"
+                    aria-controls="mobile-menu">
+                <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'" aria-hidden="true"></i>
             </button>
         </nav>
 
         <!-- Mobile Drawer Menu -->
-        <div x-show="mobileMenuOpen" 
+        <div id="mobile-menu"
+             x-show="mobileMenuOpen" 
              x-transition:enter="transition ease-out duration-200"
              x-transition:enter-start="opacity-0 -translate-y-4"
              x-transition:enter-end="opacity-100 translate-y-0"
              x-transition:leave="transition ease-in duration-150"
              x-transition:leave-start="opacity-100 translate-y-0"
              x-transition:leave-end="opacity-0 -translate-y-4"
-             class="md:hidden mt-2 glass-panel rounded-2xl p-6 shadow-2xl border border-slate-700/80">
-            <div class="flex flex-col space-y-4 font-medium text-slate-200">
-                <a href="#o-exame" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800">O Exame HD</a>
-                <a href="#aplicacoes" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800">Aplicações Clínicas</a>
-                <a href="#diferenciais" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800">Nossa Tradição (+70 Anos)</a>
-                <a href="#para-medicos" @click="mobileMenuOpen = false" class="hover:text-imi-orange py-1 border-b border-slate-800 flex items-center justify-between">
+             class="md:hidden mt-2 glass-panel rounded-2xl p-6 shadow-2xl border border-slate-700/80"
+             role="menu"
+             aria-label="Menu mobile">
+            <div class="flex flex-col space-y-4 font-medium text-slate-200" role="menubar">
+                <a href="#o-exame" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800" role="menuitem">O Exame HD</a>
+                <a href="#aplicacoes" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800" role="menuitem">Aplicações Clínicas</a>
+                <a href="#diferenciais" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800" role="menuitem">Nossa Tradição (+70 Anos)</a>
+                <a href="#para-medicos" @click="mobileMenuOpen = false" class="hover:text-imi-orange py-1 border-b border-slate-800 flex items-center justify-between" role="menuitem">
                     <span>Área Médica / Solicitantes</span>
-                    <span class="text-xs bg-imi-orange/20 text-imi-orange px-2 py-0.5 rounded-full font-semibold">Exclusivo</span>
+                    <span class="text-xs bg-imi-orange/20 text-imi-orange px-2 py-0.5 rounded-full font-semibold" aria-label="Conteúdo exclusivo para médicos">Exclusivo</span>
                 </a>
-                <a href="#duvidas" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1">Dúvidas Frequentes</a>
+                <a href="#duvidas" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1" role="menuitem">Dúvidas Frequentes</a>
                 
                 <div class="pt-2">
-                    <a href="#agendamento" @click="mobileMenuOpen = false" class="w-full text-center bg-imi-cyan text-imi-dark font-bold text-xs uppercase tracking-wider py-3 rounded-full block shadow-cyan-glow">
+                    <a href="#agendamento" @click="mobileMenuOpen = false" class="w-full text-center bg-imi-cyan text-imi-dark font-bold text-xs uppercase tracking-wider py-3 rounded-full block shadow-cyan-glow" role="menuitem" aria-label="Agendar mapeamento vascular">
                         Agendar Mapeamento
                     </a>
                 </div>
@@ -233,11 +346,11 @@
 
 
     <!-- HERO SECTION -->
-    <section class="relative pt-36 pb-20 lg:pt-44 lg:pb-32 bg-imi-dark overflow-hidden">
+    <section class="relative pt-36 pb-20 lg:pt-44 lg:pb-32 bg-imi-dark overflow-hidden" aria-labelledby="hero-title">
         <!-- Ambient Glowing Background Elements -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-imi-glow pointer-events-none rounded-full blur-3xl opacity-60"></div>
-        <div class="absolute -top-12 -right-12 w-96 h-96 bg-imi-blue/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-imi-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-imi-glow pointer-events-none rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
+        <div class="absolute -top-12 -right-12 w-96 h-96 bg-imi-blue/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-imi-cyan/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -246,13 +359,13 @@
                 <div class="lg:col-span-7 space-y-6 text-left">
                     
                     <!-- Context Badge -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-imi-card border border-imi-cyan/30 text-imi-cyan text-xs font-semibold tracking-wide uppercase shadow-inner">
-                        <i class="fa-solid fa-microscope text-sm"></i>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-imi-card border border-imi-cyan/30 text-imi-cyan text-xs font-semibold tracking-wide uppercase shadow-inner" role="status">
+                        <i class="fa-solid fa-microscope text-sm" aria-hidden="true"></i>
                         <span>Ultrassom Dermatológico de Alta Resolução (20-22 MHz)</span>
                     </div>
 
                     <!-- Editorial Title with Negative Tracking -->
-                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tightest leading-[1.1]">
+                    <h1 id="hero-title" class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tightest leading-[1.1]">
                         Mapeamento Cutâneo e Vascular para <span class="text-transparent bg-clip-text bg-gradient-to-r from-imi-cyan via-sky-300 to-white">Máxima Segurança</span> em Injetáveis.
                     </h1>
 
@@ -263,35 +376,35 @@
 
                     <!-- CTAs with Micro-interactions -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                        <a href="#agendamento" class="btn-hover-swap bg-gradient-to-r from-imi-cyan to-sky-500 hover:from-sky-400 hover:to-imi-cyan text-imi-dark font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-cyan-glow flex items-center justify-center">
+                        <a href="#agendamento" class="btn-hover-swap bg-gradient-to-r from-imi-cyan to-sky-500 hover:from-sky-400 hover:to-imi-cyan text-imi-dark font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-cyan-glow flex items-center justify-center" aria-label="Agendar exame com encaminhamento médico">
                             <span class="btn-text-default">
                                 Agendar com Encaminhamento
-                                <i class="fa-solid fa-calendar-check ml-2"></i>
+                                <i class="fa-solid fa-calendar-check ml-2" aria-hidden="true"></i>
                             </span>
                             <span class="btn-text-hover">
                                 Iniciar Agendamento
-                                <i class="fa-solid fa-angles-right ml-2 animate-double-arrow"></i>
+                                <i class="fa-solid fa-angles-right ml-2 animate-double-arrow" aria-hidden="true"></i>
                             </span>
                         </a>
 
-                        <a href="#para-medicos" class="glass-panel hover:bg-slate-800/80 text-white border border-slate-700 hover:border-imi-orange/60 font-semibold text-sm px-7 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group">
-                            <i class="fa-solid fa-user-doctor text-imi-orange group-hover:scale-110 transition-transform"></i>
+                        <a href="#para-medicos" class="glass-panel hover:bg-slate-800/80 text-white border border-slate-700 hover:border-imi-orange/60 font-semibold text-sm px-7 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group" aria-label="Acessar área do médico solicitante">
+                            <i class="fa-solid fa-user-doctor text-imi-orange group-hover:scale-110 transition-transform" aria-hidden="true"></i>
                             <span>Área do Médico Solicitante</span>
                         </a>
                     </div>
 
                     <!-- Trust indicators / Highlights -->
-                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-slate-400">
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-shield-halved text-imi-cyan text-base"></i>
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-slate-400" role="list" aria-label="Destaques e credenciais">
+                        <div class="flex items-center gap-2.5" role="listitem">
+                            <i class="fa-solid fa-shield-halved text-imi-cyan text-base" aria-hidden="true"></i>
                             <span><strong>+70 Anos</strong> de Tradição Médica</span>
                         </div>
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-wave-square text-imi-green text-base"></i>
+                        <div class="flex items-center gap-2.5" role="listitem">
+                            <i class="fa-solid fa-wave-square text-imi-green text-base" aria-hidden="true"></i>
                             <span>Transdutores de <strong>20-22 MHz</strong></span>
                         </div>
-                        <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
-                            <i class="fa-solid fa-user-shield text-imi-orange text-base"></i>
+                        <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1" role="listitem">
+                            <i class="fa-solid fa-user-shield text-imi-orange text-base" aria-hidden="true"></i>
                             <span>Médicos Radiologistas RQE</span>
                         </div>
                     </div>
@@ -575,24 +688,24 @@
                 </div>
 
                 <!-- Feature 4: Dissolução Guiada por Ultrassom -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <div class="glass-panel p-8 rounded-3xl border border-slate-700 bg-slate-900/80 flex flex-col justify-between hover:border-slate-600 transition-all">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-yellow text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">4. Procedimento Guiado</span>
-                            <i class="fa-solid fa-syringe text-slate-600 text-2xl"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest text-white bg-imi-cyan px-3 py-1 rounded-full">4. Procedimento Guiado</span>
+                            <i class="fa-solid fa-syringe text-imi-cyan text-2xl"></i>
                         </div>
                         <h3 class="font-display text-2xl font-bold text-white mb-3">Guiamento para Aplicação de Hialuronidase</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <p class="text-slate-200 text-sm leading-relaxed mb-6">
                             Fornece as coordenadas anatômicas exatas ou suporte de imagem para dissolução direcionada do ácido hialurônico com hialuronidase, preservando os tecidos adjacentes sadios.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-700/80 pt-4">
                         <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-yellow"></i>
+                            <i class="fa-solid fa-check text-imi-cyan"></i>
                             Tratamento focado sem desperdício de enzima ou agressão à pele.
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-yellow"></i>
+                            <i class="fa-solid fa-check text-imi-cyan"></i>
                             Resolução rápida e segura de sobrecorreções volumétricas.
                         </li>
                     </ul>
@@ -899,7 +1012,7 @@
 
 
     <!-- FOOTER (Strict CFM Compliance) -->
-    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 text-slate-400 text-xs relative">
+    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 text-slate-400 text-xs relative" role="contentinfo">
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
@@ -907,58 +1020,73 @@
                 <!-- Col 1: Brand & Tradition -->
                 <div class="space-y-4 md:col-span-1">
                     <div class="flex items-center gap-2">
-                        <span class="font-display font-extrabold text-2xl text-imi-cyan tracking-tighter">IMI</span>
-                        <span class="text-xs font-semibold text-white tracking-wider">DIAGNÓSTICO</span>
+                        <img src="imgs/design(9).png" alt="Logotipo IMI Diagnóstico" class="w-10 h-10 object-contain" aria-hidden="false">
+                        <span class="text-xs font-semibold text-white tracking-wider">IMI DIAGNÓSTICO</span>
                     </div>
                     <p class="text-slate-400 text-xs leading-relaxed">
                         <strong>Instituto Maringá de Imagem</strong><br>
                         Instituto Carlos Américo de Imagem S/S Ltda.<br>
+                        CNPJ: 80.615.412/0001-75<br>
                         Mais de 70 anos de tradição, precisão diagnóstica e inovação em medicina diagnóstica em Maringá - PR.
                     </p>
-                    <div class="flex items-center gap-3 text-slate-400">
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800"><i class="fa-solid fa-envelope"></i></a>
+                    <div class="flex items-center gap-3 text-slate-400" role="navigation" aria-label="Redes sociais">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800" aria-label="Instagram" aria-external="true"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800" aria-label="Facebook" aria-external="true"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800" aria-label="Enviar e-mail"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
                 <!-- Col 2: Exames & Mapeamento -->
                 <div class="space-y-3">
                     <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">Exames em Destaque</h4>
-                    <ul class="space-y-2 text-slate-400">
-                        <li><a href="#o-exame" class="hover:text-imi-cyan">Ultrassom Dermatológico HD (20-22 MHz)</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Mapeamento Vascular Facial Doppler</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Mapeamento de Preenchedores e Fios</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Avaliação de Bioestimuladores</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Diagnóstico de Complicações Estéticas</a></li>
+                    <ul class="space-y-2 text-slate-400" role="list">
+                        <li role="listitem"><a href="#o-exame" class="hover:text-imi-cyan">Ultrassom Dermatológico HD (20-22 MHz)</a></li>
+                        <li role="listitem"><a href="#aplicacoes" class="hover:text-imi-cyan">Mapeamento Vascular Facial Doppler</a></li>
+                        <li role="listitem"><a href="#aplicacoes" class="hover:text-imi-cyan">Mapeamento de Preenchedores e Fios</a></li>
+                        <li role="listitem"><a href="#aplicacoes" class="hover:text-imi-cyan">Avaliação de Bioestimuladores</a></li>
+                        <li role="listitem"><a href="#aplicacoes" class="hover:text-imi-cyan">Diagnóstico de Complicações Estéticas</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3: Para Médicos & Unidades -->
                 <div class="space-y-3">
                     <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">Atendimento & Localização</h4>
-                    <p class="text-slate-400">
-                        <strong class="text-slate-300">Unidade Central Maringá</strong><br>
-                        Maringá - Paraná - Brasil<br>
-                        Central de Agendamento: (44) 3000-0000<br>
-                        WhatsApp Exclusivo: (44) 99999-0000
+                    <address class="text-slate-400 not-italic">
+                        <strong class="text-slate-300">INSTITUTO MARINGÁ DE IMAGEM</strong><br>
+                        Avenida Curitiba, 211 - Zona 04<br>
+                        Maringá - PR, CEP 87014-130<br>
+                        Telefone: <a href="tel:+554430335500" class="hover:text-imi-cyan">(44) 3033.5500</a><br>
+                        WhatsApp: <a href="https://wa.me/554430335500" class="hover:text-imi-cyan" aria-label="Contato via WhatsApp">(44) 3033-5500</a>
+                    </address>
+                    <p class="text-slate-400 mt-2">
+                        <strong class="text-slate-300">Horário de Atendimento:</strong><br>
+                        De segunda a sexta - Das 6h45 às 23h00<br>
+                        Aos sábados - Das 6h45 às 20h00<br>
+                        Aos domingos - Das 06h45 às 17h00
                     </p>
                 </div>
 
                 <!-- Col 4: CFM Compliance & Responsabilidade Técnica -->
                 <div class="space-y-3 bg-imi-card/50 p-4 rounded-2xl border border-slate-800/80">
                     <h4 class="font-display text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
-                        <i class="fa-solid fa-user-shield text-imi-cyan"></i>
+                        <i class="fa-solid fa-user-shield text-imi-cyan" aria-hidden="true"></i>
                         Responsabilidade Técnica
                     </h4>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
                         <strong>Direção Técnica Médica:</strong><br>
-                        Corpo Clínico IMI Radiologia<br>
-                        CRM-PR XXXX | RQE Radiologia e Diagnóstico por Imagem XXXX.
+                        Dra. Francis Meire Cordeiro — CRM 15007/PR — RQE 4201<br>
+                        Dra. Carolina Kyrie Otani — CRM 34.680/PR — RQE 27911<br>
+                        Radiologia e Diagnóstico por Imagem (CBR)
                     </p>
                     <p class="text-[10px] text-slate-500 border-t border-slate-800 pt-2">
                         Este site possui caráter informativo e educacional. As informações contidas não substituem a consulta de avaliação médica presencial.
                     </p>
+                    <div class="pt-2">
+                        <a href="#" class="text-[10px] text-imi-cyan hover:underline inline-flex items-center gap-1" aria-label="Ler política de privacidade e LGPD">
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            Política de Privacidade (LGPD)
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -966,17 +1094,19 @@
             <!-- Bottom Copyright & Ribbon -->
             <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
                 <p>© 1954 - 2026 Instituto Maringá de Imagem (IMI). Todos os direitos reservados.</p>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4" role="navigation" aria-label="Links legais">
                     <a href="#" class="hover:underline">Política de Privacidade</a>
-                    <span>•</span>
+                    <span aria-hidden="true">•</span>
                     <a href="#" class="hover:underline">Termos de Uso CFM</a>
+                    <span aria-hidden="true">•</span>
+                    <a href="#" class="hover:underline">Mapa do Site</a>
                 </div>
             </div>
 
         </div>
 
         <!-- Bottom IMI Multi-color Ribbon Bar -->
-        <div class="ribbon-bar w-full absolute bottom-0 left-0"></div>
+        <div class="ribbon-bar w-full absolute bottom-0 left-0" aria-hidden="true"></div>
     </footer>
 
 </body>
