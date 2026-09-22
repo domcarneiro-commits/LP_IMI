@@ -160,17 +160,18 @@
         <nav class="glass-nav rounded-full px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
             
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-imi-card border border-slate-700/60 group-hover:border-imi-cyan transition-colors">
-                    <span class="font-display font-extrabold text-xl text-imi-cyan tracking-tighter">IMI</span>
-                    <span class="absolute -bottom-0.5 w-6 h-0.5 bg-imi-ribbon rounded-full"></span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-bold text-sm tracking-tight text-white leading-tight">IMI DIAGNÓSTICO</span>
-                    <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Instituto Carlos Américo de Imagem</span>
-                </div>
-            </a>
+<a href="#" class="flex items-center gap-3 group">
+    <!-- Container da Imagem com Controle Proporcional -->
+    <div class="relative flex items-center justify-center h-10 w-auto overflow-hidden">
+        <img 
+            src="imgs/logo.png" 
+            alt="Logo IMI" 
+            class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+    </div>
 
+    <!-- Texto ao lado da logo -->
+ 
             <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
                 <a href="#o-exame" class="hover:text-imi-cyan transition-colors">O Exame</a>
@@ -578,7 +579,7 @@
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-yellow text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">4. Procedimento Guiado</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-black text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">4. Procedimento Guiado</span>
                             <i class="fa-solid fa-syringe text-slate-600 text-2xl"></i>
                         </div>
                         <h3 class="font-display text-2xl font-bold text-white mb-3">Guiamento para Aplicação de Hialuronidase</h3>
@@ -906,19 +907,35 @@
                 
                 <!-- Col 1: Brand & Tradition -->
                 <div class="space-y-4 md:col-span-1">
-                    <div class="flex items-center gap-2">
-                        <span class="font-display font-extrabold text-2xl text-imi-cyan tracking-tighter">IMI</span>
-                        <span class="text-xs font-semibold text-white tracking-wider">DIAGNÓSTICO</span>
-                    </div>
+                    <!-- Logo do Footer -->
+                    <a href="#" class="flex items-center group inline-flex">
+                        <div class="relative flex items-center justify-center h-12 w-auto overflow-hidden">
+                            <img 
+                                src="imgs/logo.png" 
+                                alt="Logo IMI" 
+                                class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                            />
+                        </div>
+                    </a>
+
+                    <!-- Descrição -->
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        <strong>Instituto Maringá de Imagem</strong><br>
+                        <strong class="text-slate-300">Instituto Maringá de Imagem</strong><br>
                         Instituto Carlos Américo de Imagem S/S Ltda.<br>
                         Mais de 70 anos de tradição, precisão diagnóstica e inovação em medicina diagnóstica em Maringá - PR.
                     </p>
+
+                    <!-- Redes Sociais com Links -->
                     <div class="flex items-center gap-3 text-slate-400">
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan border border-slate-800"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/institutoimagem/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/people/Instituto-Maring%C3%A1-de-Imagem/100086106457224/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="mailto:ouvidoria@institutoimagem.med.br" aria-label="E-mail Ouvidoria" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -937,12 +954,23 @@
                 <!-- Col 3: Para Médicos & Unidades -->
                 <div class="space-y-3">
                     <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">Atendimento & Localização</h4>
-                    <p class="text-slate-400">
-                        <strong class="text-slate-300">Unidade Central Maringá</strong><br>
-                        Maringá - Paraná - Brasil<br>
-                        Central de Agendamento: (44) 3000-0000<br>
-                        WhatsApp Exclusivo: (44) 99999-0000
-                    </p>
+                    
+                    <div class="space-y-2 text-[11px] text-slate-400 leading-relaxed">
+                        <!-- Unidade -->
+                        <div>
+                            <p class="font-semibold text-slate-200">Unidade Central Maringá</p>
+                            <p>Avenida Curitiba, 211 &bull; Zona 04</p>
+                            <p class="text-slate-500">CEP 87014-130 &bull; Maringá, PR</p>
+                        </div>
+
+                        <!-- Central de Agendamento -->
+                        <div class="pt-2 border-t border-slate-800/60">
+                            <p class="text-slate-500 uppercase tracking-wider text-[10px] font-medium">Central de Agendamento / WhatsApp</p>
+                            <a href="https://wa.me/554430335500" target="_blank" rel="noopener noreferrer" class="font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-block mt-0.5">
+                                (44) 3033-5500
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Col 4: CFM Compliance & Responsabilidade Técnica -->
@@ -951,11 +979,28 @@
                         <i class="fa-solid fa-user-shield text-imi-cyan"></i>
                         Responsabilidade Técnica
                     </h4>
-                    <p class="text-[11px] text-slate-400 leading-relaxed">
-                        <strong>Direção Técnica Médica:</strong><br>
-                        Corpo Clínico IMI Radiologia<br>
-                        CRM-PR XXXX | RQE Radiologia e Diagnóstico por Imagem XXXX.
-                    </p>
+                    <div class="space-y-3 text-[11px] text-slate-400 leading-relaxed">
+                        <!-- Direção Técnica -->
+                        <div>
+                            <p class="font-semibold text-slate-300">Direção Técnica Médica</p>
+                            <p>Dr. Érico Diniz da Silva &bull; CRM 11804/PR</p>
+                            <p class="text-slate-500">RQE Radiologia e Diagnóstico por Imagem 4201</p>
+                        </div>
+
+                        <!-- Corpo Clínico 1 -->
+                        <div class="pt-1 border-t border-slate-800/60">
+                            <p class="font-semibold text-slate-300">Corpo Clínico IMI Radiologia</p>
+                            <p>Dra. Francis Meire Cordeiro &bull; CRM 15007/PR</p>
+                            <p class="text-slate-500">RQE Radiologia e Diagnóstico por Imagem 12892</p>
+                        </div>
+
+                        <!-- Corpo Clínico 2 -->
+                        <div class="pt-1 border-t border-slate-800/60">
+                            <p class="font-semibold text-slate-300">Corpo Clínico IMI Radiologia</p>
+                            <p>Dra. Carolina Kyrie Otani &bull; CRM 34.680/PR</p>
+                            <p class="text-slate-500">RQE Radiologia e Diagnóstico por Imagem 27911</p>
+                        </div>
+                    </div>
                     <p class="text-[10px] text-slate-500 border-t border-slate-800 pt-2">
                         Este site possui caráter informativo e educacional. As informações contidas não substituem a consulta de avaliação médica presencial.
                     </p>
@@ -978,6 +1023,5 @@
         <!-- Bottom IMI Multi-color Ribbon Bar -->
         <div class="ribbon-bar w-full absolute bottom-0 left-0"></div>
     </footer>
-
 </body>
 </html>
