@@ -185,18 +185,21 @@
             </div>
 
             <!-- Header Action Button -->
-            <div class="hidden sm:flex items-center gap-3">
-                <a href="#agendamento" class="btn-hover-swap bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-cyan-glow transition-all duration-300">
-                    <span class="btn-text-default">
-                        Agendar Exame
-                        <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
-                    </span>
-                    <span class="btn-text-hover">
-                        Com Encaminhamento
-                        <i class="fa-solid fa-angles-right ml-2 text-xs animate-double-arrow"></i>
-                    </span>
-                </a>
-            </div>
+<div class="hidden sm:flex items-center gap-3">
+    <a href="#agendamento" class="group relative inline-flex items-center justify-center h-10 px-6 rounded-full bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider shadow-cyan-glow transition-all duration-300 overflow-hidden whitespace-nowrap">
+        <!-- Texto Estado Normal -->
+        <span class="flex items-center gap-2 transition-all duration-300 transform group-hover:-translate-y-10 group-hover:opacity-0">
+            <span>Agendar Exame</span>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+        </span>
+
+        <!-- Texto Estado Hover -->
+        <span class="absolute flex items-center gap-2 transition-all duration-300 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+            <span>Com Encaminhamento</span>
+            <i class="fa-solid fa-angles-right text-xs animate-double-arrow"></i>
+        </span>
+    </a>
+</div>
 
             <!-- Mobile Menu Toggle Button -->
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir Menu">
