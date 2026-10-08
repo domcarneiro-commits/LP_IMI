@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMI - Ultrassom Dermatológico de Alta Resolução & Mapeamento de Injetáveis em Maringá</title>
-    <meta name="description" content="Instituto Maringá de Imagem (+70 anos de tradição). Mapeamento vascular, ultrassom dermatológico de alta frequência (20-22 MHz) para preenchedores, bioestimuladores e segurança em procedimentos estéticos.">
+    <meta name="description" content="Instituto Maringá de Imagem (+70 anos de tradição). Mapeamento vascular, ultrassom dermatológico de alta frequência (18-26 MHz) para preenchedores, bioestimuladores e segurança em procedimentos estéticos.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,15 +137,7 @@
         .animate-double-arrow {
             animation: doubleArrow 1.5s infinite;
         }
-
-        /* Scanline effect simulation for High Frequency Ultrasound */
-        .us-scan-line {
-            background: linear-gradient(to bottom, transparent, rgba(0, 175, 239, 0.15), transparent);
-            animation: scan 4s linear infinite;
-        }
-        @keyframes scan {
-            0% { top: -100%; }
-            100% { top: 100%; }
+100% { top: 100%; }
         }
     </style>
 </head>
@@ -252,12 +244,12 @@
                     <!-- Context Badge -->
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-imi-card border border-imi-cyan/30 text-imi-cyan text-xs font-semibold tracking-wide uppercase shadow-inner">
                         <i class="fa-solid fa-microscope text-sm"></i>
-                        <span>Ultrassom Dermatológico de Alta Resolução (20-22 MHz)</span>
+                        <span>Ultrassom Dermatológico de Alta Resolução (18-26 MHz)</span>
                     </div>
 
                     <!-- Editorial Title with Negative Tracking -->
                     <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tightest leading-[1.1]">
-                        Mapeamento Cutâneo e Vascular para <span class="text-transparent bg-clip-text bg-gradient-to-r from-imi-cyan via-sky-300 to-white">Máxima Segurança</span> em Injetáveis.
+                        Ultrassom Dermatológico de <span class="text-transparent bg-clip-text bg-gradient-to-r from-imi-cyan via-sky-300 to-white">Alta Frequência</span> com Doppler Colorido
                     </h1>
 
                     <!-- Engaging Subtitle -->
@@ -292,11 +284,11 @@
                         </div>
                         <div class="flex items-center gap-2.5">
                             <i class="fa-solid fa-wave-square text-imi-green text-base"></i>
-                            <span>Transdutores de <strong>20-22 MHz</strong></span>
+                            <span>Transdutores de <strong>18-26 MHz</strong></span>
                         </div>
                         <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
                             <i class="fa-solid fa-user-shield text-imi-orange text-base"></i>
-                            <span>Médicos Radiologistas RQE</span>
+                            <span>Médicos Especialistas com Pós-graduação e Fellowship</span>
                         </div>
                     </div>
 
@@ -309,76 +301,15 @@
                     <div class="absolute -inset-1 bg-gradient-to-r from-imi-cyan via-imi-blue to-imi-orange rounded-3xl blur-xl opacity-30 group-hover:opacity-100 transition duration-1000"></div>
                     
                     <div class="relative glass-panel rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl overflow-hidden">
-                        
-                        <!-- Top Bar Visual badge -->
-                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-imi-green animate-ping"></span>
-                                <span class="text-xs font-mono text-slate-300 uppercase tracking-widest">Doppler Vascular Ao Vivo</span>
-                            </div>
-                            <span class="text-[11px] font-mono text-imi-cyan bg-imi-cyan/10 px-2 py-0.5 rounded border border-imi-cyan/20">HD 22 MHz</span>
+                            <span class="text-[11px] font-mono text-imi-cyan bg-imi-cyan/10 px-2 py-0.5 rounded border border-imi-cyan/20">HD 18-26 MHz</span>
                         </div>
 
-                        <!-- Mock Diagnostic Scan Container -->
-                        <div class="relative my-6 aspect-video rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center">
-                            
-                            <div class="absolute inset-0 us-scan-line pointer-events-none"></div>
-                            
-                            <!-- Visual Graphic Representation of Layered Skin Ultrasound -->
-                            <div class="w-full h-full p-4 flex flex-col justify-between font-mono text-[10px] text-slate-400 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:12px_12px]">
-                                
-                                <div class="flex justify-between items-start text-xs text-imi-cyan">
-                                    <span>[EPIDERME / DERME]</span>
-                                    <span>PROF: 1.2mm</span>
-                                </div>
-
-                                <div class="relative py-2 my-auto">
-                                    <!-- Vascular Doppler Graphic Mock -->
-                                    <div class="h-12 w-full rounded bg-slate-900/80 border border-slate-800 flex items-center justify-around px-4 relative overflow-hidden">
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
-                                            <span class="text-slate-200 text-xs font-semibold">Artéria Facial (Doppler Color)</span>
-                                        </div>
-                                        <div class="text-right">
-                                            <span class="text-imi-green font-bold">Patente</span>
-                                            <span class="block text-[9px] text-slate-500">Sem Oclusão</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Filler Deposit Mock -->
-                                    <div class="mt-2 h-10 w-full rounded bg-imi-blue/20 border border-imi-cyan/40 flex items-center justify-between px-4">
-                                        <div class="flex items-center gap-2">
-                                            <i class="fa-solid fa-droplet text-imi-cyan"></i>
-                                            <span class="text-xs text-white">Depósito Ácido Hialurônico</span>
-                                        </div>
-                                        <span class="text-imi-cyan text-[10px]">Anisoecóico / Plano Subcutâneo</span>
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-between items-end text-slate-500 text-[10px]">
-                                    <span>IMI - Mapeamento Facial</span>
-                                    <span class="text-imi-orange">Alta Precisão</span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Bottom Card Info -->
-                        <div class="space-y-3 text-xs text-slate-300">
-                            <div class="flex justify-between items-center bg-imi-card/80 p-3 rounded-xl border border-slate-800">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-circle-check text-imi-green"></i>
-                                    Análise de Bioestimuladores & Preenchedores
-                                </span>
-                                <span class="font-semibold text-white">Precisão Métrica</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-imi-card/80 p-3 rounded-xl border border-slate-800">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-circle-check text-imi-green"></i>
-                                    Guiamento para Aplicação de Hialuronidase
-                                </span>
-                                <span class="font-semibold text-white">Procedimento Seguro</span>
-                            </div>
+                        <!-- Vídeo do Exame -->
+                        <div class="relative my-6 aspect-video rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden">
+                        <video class="w-full h-full object-cover rounded-2xl" autoplay loop muted playsinline poster="videos/poster-ultrassom.jpg">
+                            <source src="videos/demonstracao-ultrassom.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos.
+                        </video>
                         </div>
 
                     </div>
@@ -403,7 +334,7 @@
 
                 <div class="space-y-1">
                     <p class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        20-22 <span class="text-imi-cyan text-2xl">MHz</span>
+                        18-26 <span class="text-imi-cyan text-2xl">MHz</span>
                     </p>
                     <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Transdutores HD de Altíssima Frequência</p>
                 </div>
@@ -436,11 +367,8 @@
                     Tecnologia Médica de Ponta
                 </div>
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                    Por que o Ultrassom Dermatológico de Alta Resolução revolucionou a Estética Médica?
+                    Por que o Ultrassom Dermatológico de Alta Resolução revolucionou a Medicina Estética?
                 </h2>
-                <p class="text-slate-400 text-base leading-relaxed">
-                    Com a expansão dos procedimentos injetáveis (preenchimentos, bioestimuladores e fios), a avaliação diagnóstica não invasiva da pele tornou-se indispensável para garantir a previsibilidade e a integridade vascular do paciente.
-                </p>
             </div>
 
             <!-- Grid 3 Cards -->
@@ -453,7 +381,7 @@
                     </div>
                     <h3 class="font-display text-xl font-bold text-white mb-3">Visão Subcutânea em Camadas</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Diferente do ultrassom convencional, os transdutores dermatológicos de alta frequência (20 a 22 MHz) permitem diferenciar epiderme, derme, tecido subcutâneo e o sistema muloaponeurótico (SMAS) com definição micrométrica.
+                        Diferente do ultrassom convencional, os transdutores dermatológicos de alta frequência (18 a 26 MHz) permitem diferenciar epiderme, derme, tecido subcutâneo e o sistema muloaponeurótico (SMAS) com definição micrométrica.
                     </p>
                 </div>
 
@@ -475,7 +403,7 @@
                     </div>
                     <h3 class="font-display text-xl font-bold text-white mb-3">Identificação de Substâncias</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Caracterização precisa da substância injetada: Ácido Hialurônico, Hidroxiapatita de Cálcio (Radiesse), Ácido Poli-L-Láctico (Sculptra/Elleva), PMMA, Silicone Industrial ou Fios de Sustentação.
+                        Caracterização da substância injetada: Ácido Hialurônico, Hidroxiapatita de Cálcio (Radiesse), Ácido Poli-L-Láctico (Sculptra/Elleva), PMMA, Silicone Industrial ou Fios de Sustentação.
                     </p>
                 </div>
 
@@ -505,101 +433,61 @@
 
             <!-- Grid 2x2 Feature Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Feature 1: Planejamento Pré-Injetáveis -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+
+                <!-- Card 1: Mapeamento Facial e Glúteo -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-imi-cyan/40 transition-all duration-300">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full">1. Pré-Procedimento</span>
-                            <i class="fa-solid fa-compass text-slate-600 text-2xl"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full">1. Mapeamento</span>
+                            
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Mapeamento Vascular Preventivo</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Indicado antes da aplicação de preenchedores em áreas de alto risco (olheiras, lábios, sulco nasogeniano, glabela e nariz). Identifica o plano exato das artérias para que o médico injetor atue com total margem de segurança.
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Mapeamento Facial e Glúteo</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Identifica e localiza preenchedores, bioestimuladores, fios e implantes.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-green"></i>
-                            Identificação de anomalias vasculares e ramificações aberrantes.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-green"></i>
-                            Definição dos planos anatômicos seguros (Supraperiósteo x Subcutâneo).
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Feature 2: Avaliação e Acompanhamento -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <!-- Card 2: Avaliação de Complicações Estéticas -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-imi-orange/40 transition-all duration-300">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-green bg-imi-green/10 px-3 py-1 rounded-full">2. Acompanhamento</span>
-                            <i class="fa-solid fa-layer-group text-slate-600 text-2xl"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-orange bg-imi-orange/10 px-3 py-1 rounded-full">2. Complicações</span>
+                            
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação de Integração & Bioestimuladores</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Permite acompanhar a resposta tecidual pós-aplicação de bioestimuladores (Sculptra, Radiesse) e a degradação fisiológica natural do Ácido Hialurônico ao longo dos meses.
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação de Complicações Estéticas</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Nódulos, ETIP, abscessos e oclusões vasculares.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-green"></i>
-                            Mensuração da espessura dérmica e neocolagenogênese.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-green"></i>
-                            Verificação da simetria de espalhamento do produto no tecido.
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Feature 3: Diagnóstico de Complicações -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <!-- Card 3: Avaliação e Acompanhamento de Lesões -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-imi-green/40 transition-all duration-300">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-orange bg-imi-orange/10 px-3 py-1 rounded-full">3. Diagnóstico de Complicações</span>
-                            <i class="fa-solid fa-triangle-exclamation text-slate-600 text-2xl"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-green bg-imi-green/10 px-3 py-1 rounded-full">3. Lesões</span>
+                            
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Investigação de Nódulos, Granulomas e Migração</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Investiga edema persistente, assimetria tardia, nódulos não palpáveis, granulomas ou migração indesejada de preenchimentos faciais e corporais (glúteos, coxas, lábios).
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação e Acompanhamento de Lesões</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Cistos, sólidas, vasculares, inflamatórias ou tumorais. Avaliação de patologias ungueais - análise detalhada das estruturas.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-orange"></i>
-                            Diferenciação entre processo inflamatório, abscesso e nódulo fibroso.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-orange"></i>
-                            Localização precisa de produtos permanentes antigos (ex: PMMA).
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Feature 4: Dissolução Guiada por Ultrassom -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <!-- Card 4: Avaliação Pré-Cirúrgica -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-600/60 transition-all duration-300">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-black text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">4. Procedimento Guiado</span>
-                            <i class="fa-solid fa-syringe text-slate-600 text-2xl"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">4. Pré-Cirúrgico</span>
+                            <i class="fa-solid fa-scalpel text-slate-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Guiamento para Aplicação de Hialuronidase</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Fornece as coordenadas anatômicas exatas ou suporte de imagem para dissolução direcionada do ácido hialurônico com hialuronidase, preservando os tecidos adjacentes sadios.
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação Pré-Cirúrgica</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Análise detalhada das camadas da pele e estruturas subjacentes.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-yellow"></i>
-                            Tratamento focado sem desperdício de enzima ou agressão à pele.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-imi-yellow"></i>
-                            Resolução rápida e segura de sobrecorreções volumétricas.
-                        </li>
-                    </ul>
                 </div>
 
             </div>
@@ -634,27 +522,8 @@
                         </h2>
 
                         <p class="text-slate-300 text-base leading-relaxed">
-                            O Instituto Maringá de Imagem atua como um verdadeiro parceiro técnico da sua clínica. Disponibilizamos laudos detalhados com documentação fotográfica ultrassonográfica, mapeamento Doppler colorido e canal direto de discussão de casos com nossos radiologistas especializados.
+                            O Instituto Maringá de Imagem atua como um verdadeiro parceiro técnico da sua clínica. Disponibilizamos laudos iconográficos com documentação fotográfica ultrassonográfica, mapeamento Doppler colorido e canal direto de discussão de casos com nossos radiologistas especializados.
                         </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300 pt-2">
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-imi-cyan text-lg mt-0.5"></i>
-                                <span><strong>Laudos Estruturados:</strong> Descrição anatômica por planos (epiderme ao SMAS).</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-imi-cyan text-lg mt-0.5"></i>
-                                <span><strong>Mapas Vasculares Impressos:</strong> Identificação de profundidade e fluxo Doppler.</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-imi-cyan text-lg mt-0.5"></i>
-                                <span><strong>Atendimento Prioritário para Urgências:</strong> Suporte ágil para suspeitas de intercorrência.</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-imi-cyan text-lg mt-0.5"></i>
-                                <span><strong>Discussão de Casos:</strong> Comunicação direta entre médico solicitante e radiologista.</span>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-imi-card/80 rounded-2xl border border-slate-800 text-center space-y-4">
@@ -687,9 +556,6 @@
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
                     Por que escolher o IMI — Instituto Maringá de Imagem?
                 </h2>
-                <p class="text-slate-400 text-sm">
-                    Desde 1954, o Instituto Carlos Américo de Imagem é referência de excelência médica e ética radiológica no Paraná.
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -723,7 +589,7 @@
                     </div>
                     <h3 class="font-display text-xl font-bold text-white mb-2">Transdutores HD Dedicados</h3>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Equipamentos dotados de sondas de altíssima frequência (20-22 MHz), capazes de avaliar a derme milímetro a milímetro, essenciais para o mapeamento cutâneo e vascular estético.
+                        Equipamentos dotados de sondas de altíssima frequência (18-26 MHz), capazes de avaliar a derme milímetro a milímetro, essenciais para o mapeamento cutâneo e vascular estético.
                     </p>
                 </div>
 
@@ -859,7 +725,7 @@
                         <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 1 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                     </button>
                     <div x-show="activeAccordion === 1" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Priorizamos o atendimento com encaminhamento de um médico (dermatologista, cirurgião plástico ou médico injetor) para que possamos responder com precisão às dúvidas clínicas específicas do seu caso. Contudo, caso deseje realizar o exame preventivamente antes de um procedimento, nossa central fornecerá as orientações adequadas.
+                        Priorizamos o atendimento com encaminhamento de um médico (dermatologista, cirurgião plástico ou médico injetor) para que possamos responder com precisão às dúvidas clínicas específicas do seu caso
                     </div>
                 </div>
 
@@ -881,7 +747,7 @@
                         <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 3 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                     </button>
                     <div x-show="activeAccordion === 3" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Sim. Transdutores de 20-22 MHz conseguem caracterizar o padrão de ecogenicidade de produtos permanentes antigos (como PMMA e Silicone industrial), bem como depósitos remanescentes de Ácido Hialurônico ou Bioestimuladores de Colágeno.
+                        Sim. Transdutores de 18-26 MHz conseguem caracterizar o padrão de ecogenicidade de produtos permanentes antigos (como PMMA e Silicone industrial), bem como depósitos remanescentes de Ácido Hialurônico ou Bioestimuladores de Colágeno.
                     </div>
                 </div>
 
@@ -892,12 +758,81 @@
                         <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 4 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                     </button>
                     <div x-show="activeAccordion === 4" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                        O laudo é emitido com rigor técnico pelo corpo de médicos radiologistas do IMI, contendo imagens de alta definição, medições milimétricas das camadas e avaliação Doppler. Ele fica disponível digitalmente no portal do IMI e pode ser compartilhado diretamente com seu médico.
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                        O laudo Iconográfico é emitido com rigor técnico pelo corpo de médicos radiologistas do IMI, contendo imagens de alta definição, medições das camadas e avaliação Doppler. Ele fica disponível digitalmente no portal do IMI e pode ser compartilhado diretamente com seu médico.
+                    </p>
                     </div>
                 </div>
 
             </div>
 
+        </div>
+    </section>
+
+
+    <!-- SECTION: CORPO CLÍNICO & DIREÇÃO TÉCNICA -->
+    <section class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="font-display text-3xl font-bold text-white tracking-tight">Corpo Clínico & Responsabilidade Técnica</h2>
+                <p class="text-slate-400 text-sm mt-2">Médicos Especialistas em Ultrassonografia Dermatológica</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dr. Érico Diniz da Silva -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <img src="imgs/erico.png" alt="Dr. Érico Diniz da Silva" class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg">
+                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">Direção Técnica Médica</span>
+                    <h3 class="font-bold text-lg text-white">Dr. Érico Diniz da Silva</h3>
+                    <p class="text-xs text-slate-400 mb-4">CRM 11804/PR • RQE 4201</p>
+                    <ul class="text-xs text-slate-300 space-y-2 text-left w-full border-t border-slate-800 pt-4">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
+                            <span>Curso de Extensão em Ultrassom Dermatológico - Skin Academy - Dra. Luciana Zattar</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
+                            <span>Fellowship de Ultrassom Dermatológico pelo Instituto Azulay RJ - Cetrus</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Dra. Francis Meire Cordeiro -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <img src="imgs/francis.png" alt="Dra. Francis Meire Cordeiro" class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg">
+                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">Corpo Clínico IMI Radiologia</span>
+                    <h3 class="font-bold text-lg text-white">Dra. Francis Meire Cordeiro</h3>
+                    <p class="text-xs text-slate-400 mb-4">CRM 15007/PR • RQE 12892</p>
+                    <ul class="text-xs text-slate-300 space-y-2 text-left w-full border-t border-slate-800 pt-4">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
+                            <span>Pós Graduação em Ultrassonografia Dermatológica pela Cetrus SP.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
+                            <span>Fellowship em Ultrassonografia Dermatológica - Curitiba/PR.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Dra. Carolina Kyrie Otani -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <img src="imgs/carolina.png" alt="Dra. Carolina Kyrie Otani" class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg">
+                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">Corpo Clínico IMI Radiologia</span>
+                    <h3 class="font-bold text-lg text-white">Dra. Carolina Kyrie Otani</h3>
+                    <p class="text-xs text-slate-400 mb-4">CRM 34.680/PR • RQE 27911</p>
+                    <ul class="text-xs text-slate-300 space-y-2 text-left w-full border-t border-slate-800 pt-4">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
+                            <span>Pós Graduação em Ultrassonografia Dermatológica pela Cetrus SP.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
+                            <span>Fellowship em Ultrassonografia Dermatológica - Curitiba/PR.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -936,7 +871,7 @@
                         <a href="https://www.facebook.com/people/Instituto-Maring%C3%A1-de-Imagem/100086106457224/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="mailto:ouvidoria@institutoimagem.med.br" aria-label="E-mail Ouvidoria" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+                        <a href="/cdn-cgi/l/email-protection#254a50534c414a574c44654c4b56514c5150514a4c48444240480b4840410b4757" aria-label="E-mail Ouvidoria" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
                     </div>
@@ -946,11 +881,7 @@
                 <div class="space-y-3">
                     <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">Exames em Destaque</h4>
                     <ul class="space-y-2 text-slate-400">
-                        <li><a href="#o-exame" class="hover:text-imi-cyan">Ultrassom Dermatológico HD (20-22 MHz)</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Mapeamento Vascular Facial Doppler</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Mapeamento de Preenchedores e Fios</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Avaliação de Bioestimuladores</a></li>
-                        <li><a href="#aplicacoes" class="hover:text-imi-cyan">Diagnóstico de Complicações Estéticas</a></li>
+                        <li><a href="#o-exame" class="hover:text-imi-cyan">Ultrassom Dermatológico HD (18-26 MHz)</a></li>
                     </ul>
                 </div>
 
@@ -978,34 +909,8 @@
 
                 <!-- Col 4: CFM Compliance & Responsabilidade Técnica -->
                 <div class="space-y-3 bg-imi-card/50 p-4 rounded-2xl border border-slate-800/80">
-                    <h4 class="font-display text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
-                        <i class="fa-solid fa-user-shield text-imi-cyan"></i>
-                        Responsabilidade Técnica
-                    </h4>
-                    <div class="space-y-3 text-[11px] text-slate-400 leading-relaxed">
-                        <!-- Direção Técnica -->
-                        <div>
-                            <p class="font-semibold text-slate-300">Direção Técnica Médica</p>
-                            <p>Dr. Érico Diniz da Silva &bull; CRM 11804/PR</p>
-                            <p class="text-slate-500">RQE Radiologia e Diagnóstico por Imagem 4201</p>
-                        </div>
-
-                        <!-- Corpo Clínico 1 -->
-                        <div class="pt-1 border-t border-slate-800/60">
-                            <p class="font-semibold text-slate-300">Corpo Clínico IMI Radiologia</p>
-                            <p>Dra. Francis Meire Cordeiro &bull; CRM 15007/PR</p>
-                            <p class="text-slate-500">RQE Radiologia e Diagnóstico por Imagem 12892</p>
-                        </div>
-
-                        <!-- Corpo Clínico 2 -->
-                        <div class="pt-1 border-t border-slate-800/60">
-                            <p class="font-semibold text-slate-300">Corpo Clínico IMI Radiologia</p>
-                            <p>Dra. Carolina Kyrie Otani &bull; CRM 34.680/PR</p>
-                            <p class="text-slate-500">RQE Radiologia e Diagnóstico por Imagem 27911</p>
-                        </div>
-                    </div>
-                    <p class="text-[10px] text-slate-500 border-t border-slate-800 pt-2">
-                        Este site possui caráter informativo e educacional. As informações contidas não substituem a consulta de avaliação médica presencial.
+                    <p class="text-[10px] text-slate-500 leading-relaxed">
+                         Este site possui caráter informativo e educacional. As informações contidas não substituem a consulta de avaliação médica presencial.
                     </p>
                 </div>
 
@@ -1026,5 +931,6 @@
         <!-- Bottom IMI Multi-color Ribbon Bar -->
         <div class="ribbon-bar w-full absolute bottom-0 left-0"></div>
     </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"f0f03d0605bf45f1a3b17cf7d5e6861f","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
