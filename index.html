@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>IMI - Ultrassom Dermatológico de Alta Resolução & Mapeamento de Injetáveis em Maringá</title>
+
     <meta name="description" content="Instituto Maringá de Imagem (+70 anos de tradição). Mapeamento vascular, ultrassom dermatológico de alta frequência (18-26 MHz) para preenchedores, bioestimuladores e segurança em procedimentos estéticos.">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS CDN -->
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Alpine.js for lightweight interaction -->
+
+    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
@@ -46,7 +49,7 @@
                     },
                     letterSpacing: {
                         tightest: '-0.04em',
-                        tighter: '-0.02em',
+                        tighter: '-0.02em'
                     },
                     backgroundImage: {
                         'imi-gradient': 'linear-gradient(135deg, #00AFEF 0%, #2B2DAB 100%)',
@@ -57,15 +60,16 @@
                     boxShadow: {
                         'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
                         'cyan-glow': '0 0 25px -5px rgba(0, 175, 239, 0.4)',
-                        'orange-glow': '0 0 25px -5px rgba(245, 131, 44, 0.4)',
+                        'orange-glow': '0 0 25px -5px rgba(245, 131, 44, 0.4)'
                     }
                 }
             }
-        }
+        };
     </script>
 
     <style>
-        /* Custom Styles & Glassmorphism */
+        /* Glassmorphism */
+
         .glass-panel {
             background: rgba(22, 27, 34, 0.75);
             backdrop-filter: blur(16px);
@@ -83,36 +87,52 @@
         .imi-border-gradient {
             position: relative;
         }
+
         .imi-border-gradient::before {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: inherit;
             padding: 1.5px;
-            background: linear-gradient(90deg, #00AFEF, #2B2DAB, #F5832C, #00A357);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            background: linear-gradient(
+                90deg,
+                #00AFEF,
+                #2B2DAB,
+                #F5832C,
+                #00A357
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                          linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
         }
 
-        /* Ribbon accent bar */
         .ribbon-bar {
             height: 3px;
-            background: linear-gradient(90deg, #00AFEF 0%, #2B2DAB 33%, #F5832C 66%, #00A357 100%);
+            background: linear-gradient(
+                90deg,
+                #00AFEF 0%,
+                #2B2DAB 33%,
+                #F5832C 66%,
+                #00A357 100%
+            );
         }
 
-        /* Hover animation swaps */
+        /* Button animations */
+
         .btn-hover-swap {
             position: relative;
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .btn-hover-swap .btn-text-default {
             display: inline-flex;
             align-items: center;
             transition: transform 0.3s ease;
         }
+
         .btn-hover-swap .btn-text-hover {
             position: absolute;
             inset: 0;
@@ -122,419 +142,950 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
+
         .btn-hover-swap:hover .btn-text-default {
             transform: translateY(-100%);
         }
+
         .btn-hover-swap:hover .btn-text-hover {
             transform: translateY(0);
         }
 
-        /* Smooth double arrow pulse */
         @keyframes doubleArrow {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
+            0%, 100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
         }
+
         .animate-double-arrow {
             animation: doubleArrow 1.5s infinite;
         }
-100% { top: 100%; }
+
+        /* Ajustes responsivos do vídeo */
+
+        .video-exame-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #020617;
+            border-radius: 1rem;
+        }
+
+        .video-exame {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+        }
+
+        @media (max-width: 767px) {
+            .video-exame-container {
+                aspect-ratio: 16 / 9;
+                width: 100%;
+            }
+
+            .video-exame {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center center;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .video-exame-container {
+                aspect-ratio: 16 / 9;
+            }
         }
     </style>
 </head>
 
-<body class="bg-imi-dark text-slate-100 font-sans antialiased selection:bg-imi-cyan selection:text-imi-dark overflow-x-hidden" x-data="{ mobileMenuOpen: false }">
+<body
+    class="bg-imi-dark text-slate-100 font-sans antialiased selection:bg-imi-cyan selection:text-imi-dark overflow-x-hidden"
+    x-data="{ mobileMenuOpen: false }"
+>
 
-    <!-- Top Accent Ribbon -->
+    <!-- TOP ACCENT RIBBON -->
+
     <div class="ribbon-bar w-full fixed top-0 z-50"></div>
 
-    <!-- FLOATING GLASSMORPHIC NAVBAR -->
-    <header class="fixed top-3 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <nav class="glass-nav rounded-full px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
-            
-            <!-- Logo -->
-<a href="#" class="flex items-center gap-3 group">
-    <!-- Container da Imagem com Controle Proporcional -->
-    <div class="relative flex items-center justify-center h-10 w-auto overflow-hidden">
-        <img 
-            src="imgs/logo.png" 
-            alt="Logo IMI" 
-            class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-        />
-    </div>
 
-    <!-- Texto ao lado da logo -->
- 
-            <!-- Desktop Nav Links -->
+    <!-- NAVBAR -->
+
+    <header class="fixed top-3 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+        <nav class="glass-nav rounded-full px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
+
+            <!-- Logo -->
+
+            <a href="#" class="flex items-center gap-3 group">
+
+                <div class="relative flex items-center justify-center h-10 w-auto overflow-hidden">
+
+                    <img
+                        src="imgs/logo.png"
+                        alt="Logo IMI"
+                        class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    >
+
+                </div>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#o-exame" class="hover:text-imi-cyan transition-colors">O Exame</a>
-                <a href="#aplicacoes" class="hover:text-imi-cyan transition-colors">Aplicações Clínicas</a>
-                <a href="#diferenciais" class="hover:text-imi-cyan transition-colors">Diferenciais</a>
-                <a href="#para-medicos" class="hover:text-imi-cyan transition-colors flex items-center gap-1.5">
+
+                <a href="#o-exame" class="hover:text-imi-cyan transition-colors">
+                    O Exame
+                </a>
+
+                <a href="#aplicacoes" class="hover:text-imi-cyan transition-colors">
+                    Aplicações Clínicas
+                </a>
+
+                <a href="#diferenciais" class="hover:text-imi-cyan transition-colors">
+                    Diferenciais
+                </a>
+
+                <a
+                    href="#para-medicos"
+                    class="hover:text-imi-cyan transition-colors flex items-center gap-1.5"
+                >
                     <span class="w-1.5 h-1.5 rounded-full bg-imi-orange animate-pulse"></span>
                     Para Médicos
                 </a>
-                <a href="#duvidas" class="hover:text-imi-cyan transition-colors">FAQ</a>
+
+                <a href="#duvidas" class="hover:text-imi-cyan transition-colors">
+                    FAQ
+                </a>
+
             </div>
 
-            <!-- Header Action Button -->
-<div class="hidden sm:flex items-center gap-3">
-    <a href="#agendamento" class="group relative inline-flex items-center justify-center h-10 px-6 rounded-full bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider shadow-cyan-glow transition-all duration-300 overflow-hidden whitespace-nowrap">
-        <!-- Texto Estado Normal -->
-        <span class="flex items-center gap-2 transition-all duration-300 transform group-hover:-translate-y-10 group-hover:opacity-0">
-            <span>Agendar Exame</span>
-            <i class="fa-solid fa-chevron-right text-xs"></i>
-        </span>
 
-        <!-- Texto Estado Hover -->
-        <span class="absolute flex items-center gap-2 transition-all duration-300 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-            <span>Com Encaminhamento</span>
-            <i class="fa-solid fa-angles-right text-xs animate-double-arrow"></i>
-        </span>
-    </a>
-</div>
+            <!-- Header CTA -->
 
-            <!-- Mobile Menu Toggle Button -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir Menu">
-                <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'"></i>
+            <div class="hidden sm:flex items-center gap-3">
+
+                <a
+                    href="#agendamento"
+                    class="group relative inline-flex items-center justify-center h-10 px-6 rounded-full bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider shadow-cyan-glow transition-all duration-300 overflow-hidden whitespace-nowrap"
+                >
+
+                    <span class="flex items-center gap-2 transition-all duration-300 transform group-hover:-translate-y-10 group-hover:opacity-0">
+
+                        <span>Agendar Exame</span>
+
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+
+                    </span>
+
+                    <span class="absolute flex items-center gap-2 transition-all duration-300 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+
+                        <span>Com Encaminhamento</span>
+
+                        <i class="fa-solid fa-angles-right text-xs animate-double-arrow"></i>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Navigation Button -->
+
+            <button
+                @click="mobileMenuOpen = !mobileMenuOpen"
+                class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none"
+                aria-label="Abrir Menu"
+                :aria-expanded="mobileMenuOpen.toString()"
+            >
+
+                <i
+                    class="fa-solid"
+                    :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'"
+                ></i>
+
             </button>
+
         </nav>
 
-        <!-- Mobile Drawer Menu -->
-        <div x-show="mobileMenuOpen" 
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             x-transition:leave="transition ease-in duration-150"
-             x-transition:leave-start="opacity-100 translate-y-0"
-             x-transition:leave-end="opacity-0 -translate-y-4"
-             class="md:hidden mt-2 glass-panel rounded-2xl p-6 shadow-2xl border border-slate-700/80">
+
+        <!-- Mobile Drawer -->
+
+        <div
+            x-show="mobileMenuOpen"
+            x-cloak
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-4"
+            class="md:hidden mt-2 glass-panel rounded-2xl p-6 shadow-2xl border border-slate-700/80"
+        >
+
             <div class="flex flex-col space-y-4 font-medium text-slate-200">
-                <a href="#o-exame" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800">O Exame HD</a>
-                <a href="#aplicacoes" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800">Aplicações Clínicas</a>
-                <a href="#diferenciais" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1 border-b border-slate-800">Nossa Tradição (+70 Anos)</a>
-                <a href="#para-medicos" @click="mobileMenuOpen = false" class="hover:text-imi-orange py-1 border-b border-slate-800 flex items-center justify-between">
-                    <span>Área Médica / Solicitantes</span>
-                    <span class="text-xs bg-imi-orange/20 text-imi-orange px-2 py-0.5 rounded-full font-semibold">Exclusivo</span>
+
+                <a
+                    href="#o-exame"
+                    @click="mobileMenuOpen = false"
+                    class="hover:text-imi-cyan py-1 border-b border-slate-800"
+                >
+                    O Exame HD
                 </a>
-                <a href="#duvidas" @click="mobileMenuOpen = false" class="hover:text-imi-cyan py-1">Dúvidas Frequentes</a>
-                
+
+                <a
+                    href="#aplicacoes"
+                    @click="mobileMenuOpen = false"
+                    class="hover:text-imi-cyan py-1 border-b border-slate-800"
+                >
+                    Aplicações Clínicas
+                </a>
+
+                <a
+                    href="#diferenciais"
+                    @click="mobileMenuOpen = false"
+                    class="hover:text-imi-cyan py-1 border-b border-slate-800"
+                >
+                    Nossa Tradição (+70 Anos)
+                </a>
+
+                <a
+                    href="#para-medicos"
+                    @click="mobileMenuOpen = false"
+                    class="hover:text-imi-orange py-1 border-b border-slate-800 flex items-center justify-between"
+                >
+
+                    <span>Área Médica / Solicitantes</span>
+
+                    <span class="text-xs bg-imi-orange/20 text-imi-orange px-2 py-0.5 rounded-full font-semibold">
+                        Exclusivo
+                    </span>
+
+                </a>
+
+                <a
+                    href="#duvidas"
+                    @click="mobileMenuOpen = false"
+                    class="hover:text-imi-cyan py-1"
+                >
+                    Dúvidas Frequentes
+                </a>
+
                 <div class="pt-2">
-                    <a href="#agendamento" @click="mobileMenuOpen = false" class="w-full text-center bg-imi-cyan text-imi-dark font-bold text-xs uppercase tracking-wider py-3 rounded-full block shadow-cyan-glow">
+
+                    <a
+                        href="#agendamento"
+                        @click="mobileMenuOpen = false"
+                        class="w-full text-center bg-imi-cyan text-imi-dark font-bold text-xs uppercase tracking-wider py-3 rounded-full block shadow-cyan-glow"
+                    >
                         Agendar Mapeamento
                     </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
 
 
+
     <!-- HERO SECTION -->
+
     <section class="relative pt-36 pb-20 lg:pt-44 lg:pb-32 bg-imi-dark overflow-hidden">
-        <!-- Ambient Glowing Background Elements -->
+
+        <!-- Background Elements -->
+
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-imi-glow pointer-events-none rounded-full blur-3xl opacity-60"></div>
+
         <div class="absolute -top-12 -right-12 w-96 h-96 bg-imi-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-imi-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
 
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
-                <!-- Hero Left Text Column -->
+
+
+                <!-- Hero Text -->
+
                 <div class="lg:col-span-7 space-y-6 text-left">
-                    
-                    <!-- Context Badge -->
+
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-imi-card border border-imi-cyan/30 text-imi-cyan text-xs font-semibold tracking-wide uppercase shadow-inner">
+
                         <i class="fa-solid fa-microscope text-sm"></i>
-                        <span>Ultrassom Dermatológico de Alta Resolução (18-26 MHz)</span>
+
+                        <span>
+                            Ultrassom Dermatológico de Alta Resolução (18-26 MHz)
+                        </span>
+
                     </div>
 
-                    <!-- Editorial Title with Negative Tracking -->
+
                     <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tightest leading-[1.1]">
-                        Ultrassom Dermatológico de <span class="text-transparent bg-clip-text bg-gradient-to-r from-imi-cyan via-sky-300 to-white">Alta Frequência</span> com Doppler Colorido
+
+                        Ultrassom Dermatológico de
+
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-imi-cyan via-sky-300 to-white">
+                            Alta Frequência
+                        </span>
+
+                        com Doppler Colorido
+
                     </h1>
 
-                    <!-- Engaging Subtitle -->
+
                     <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-                        A evolução da dermatologia diagnóstica em Maringá. Identificação ultraprecisa de preenchedores, bioestimuladores de colágeno, fios e anatomia vascular em tempo real — prevenindo complicações e orientando procedimentos médicos.
+
+                        A evolução da dermatologia diagnóstica em Maringá.
+                        Identificação precisa de preenchedores, bioestimuladores
+                        de colágeno, fios e anatomia vascular em tempo real —
+                        prevenindo complicações e orientando procedimentos médicos.
+
                     </p>
 
-                    <!-- CTAs with Micro-interactions -->
+
+                    <!-- Hero CTAs -->
+
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                        <a href="#agendamento" class="btn-hover-swap bg-gradient-to-r from-imi-cyan to-sky-500 hover:from-sky-400 hover:to-imi-cyan text-imi-dark font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-cyan-glow flex items-center justify-center">
+
+                        <a
+                            href="#agendamento"
+                            class="btn-hover-swap bg-gradient-to-r from-imi-cyan to-sky-500 hover:from-sky-400 hover:to-imi-cyan text-imi-dark font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-cyan-glow flex items-center justify-center"
+                        >
+
                             <span class="btn-text-default">
+
                                 Agendar com Encaminhamento
+
                                 <i class="fa-solid fa-calendar-check ml-2"></i>
+
                             </span>
+
                             <span class="btn-text-hover">
+
                                 Iniciar Agendamento
+
                                 <i class="fa-solid fa-angles-right ml-2 animate-double-arrow"></i>
+
                             </span>
+
                         </a>
 
-                        <a href="#para-medicos" class="glass-panel hover:bg-slate-800/80 text-white border border-slate-700 hover:border-imi-orange/60 font-semibold text-sm px-7 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group">
+
+                        <a
+                            href="#para-medicos"
+                            class="glass-panel hover:bg-slate-800/80 text-white border border-slate-700 hover:border-imi-orange/60 font-semibold text-sm px-7 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group"
+                        >
+
                             <i class="fa-solid fa-user-doctor text-imi-orange group-hover:scale-110 transition-transform"></i>
+
                             <span>Área do Médico Solicitante</span>
+
                         </a>
+
                     </div>
 
-                    <!-- Trust indicators / Highlights -->
+
+                    <!-- Trust Indicators -->
+
                     <div class="pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-slate-400">
+
                         <div class="flex items-center gap-2.5">
+
                             <i class="fa-solid fa-shield-halved text-imi-cyan text-base"></i>
-                            <span><strong>+70 Anos</strong> de Tradição Médica</span>
+
+                            <span>
+                                <strong>+70 Anos</strong> de Tradição Médica
+                            </span>
+
                         </div>
+
+
                         <div class="flex items-center gap-2.5">
+
                             <i class="fa-solid fa-wave-square text-imi-green text-base"></i>
-                            <span>Transdutores de <strong>18-26 MHz</strong></span>
+
+                            <span>
+                                Transdutores de <strong>18-26 MHz</strong>
+                            </span>
+
                         </div>
+
+
                         <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
+
                             <i class="fa-solid fa-user-shield text-imi-orange text-base"></i>
-                            <span>Médicos Especialistas com Pós-graduação e Fellowship</span>
+
+                            <span>
+                                Médicos Especialistas com Pós-graduação e Fellowship
+                            </span>
+
                         </div>
+
                     </div>
 
                 </div>
 
-                <!-- Hero Right Visual Card -->
+
+
+                <!-- Hero Video Card -->
+
                 <div class="lg:col-span-5 relative">
-                    
-                    <!-- Decorative Gradient Glow Frame -->
-                    <div class="absolute -inset-1 bg-gradient-to-r from-imi-cyan via-imi-blue to-imi-orange rounded-3xl blur-xl opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-                    
+
+                    <div class="absolute -inset-1 bg-gradient-to-r from-imi-cyan via-imi-blue to-imi-orange rounded-3xl blur-xl opacity-30 transition duration-1000"></div>
+
+
                     <div class="relative glass-panel rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl overflow-hidden">
-                            <span class="text-[11px] font-mono text-imi-cyan bg-imi-cyan/10 px-2 py-0.5 rounded border border-imi-cyan/20">HD 18-26 MHz</span>
-                        </div>
 
-                        <!-- Vídeo do Exame -->
-                        <div class="relative my-6 aspect-video rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden">
-                        <video class="w-full h-full object-cover rounded-2xl" autoplay loop muted playsinline poster="videos/poster-ultrassom.jpg">
-                            <source src="videos/demonstracao-ultrassom.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos.
-                        </video>
+                        <span class="text-[11px] font-mono text-imi-cyan bg-imi-cyan/10 px-2 py-0.5 rounded border border-imi-cyan/20">
+                            HD 18-26 MHz
+                        </span>
+
+
+                        <!-- Vídeo com enquadramento responsivo -->
+
+                        <div class="video-exame-container mt-6 border border-slate-800">
+
+                            <video
+                                class="video-exame"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                preload="metadata"
+                                poster="videos/poster-ultrassom.jpg"
+                            >
+
+                                <source
+                                    src="videos/demonstracao-ultrassom.mp4"
+                                    type="video/mp4"
+                                >
+
+                                Seu navegador não suporta vídeos.
+
+                            </video>
+
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
-    <!-- STATS BANNER (+70 Anos de Tradição) -->
+
+    <!-- STATS BANNER -->
+
     <section class="relative bg-imi-card border-y border-slate-800 py-10">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-slate-800/80">
-                
+
+            <!-- Grid equilibrado com três diferenciais -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:divide-x divide-slate-800/80">
+
+
+                <!-- Stat 1 -->
+
                 <div class="space-y-1">
+
                     <p class="font-display text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-imi-cyan to-white tracking-tight">
+
                         +70 Anos
+
                     </p>
-                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">De Tradição em Maringá (1954)</p>
+
+                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">
+
+                        De Tradição em Maringá (1954)
+
+                    </p>
+
                 </div>
 
+
+                <!-- Stat 2 -->
+
                 <div class="space-y-1">
+
                     <p class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        18-26 <span class="text-imi-cyan text-2xl">MHz</span>
+
+                        18-26
+
+                        <span class="text-imi-cyan text-2xl">
+                            MHz
+                        </span>
+
                     </p>
-                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Transdutores HD de Altíssima Frequência</p>
+
+                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">
+
+                        Transdutores HD de Altíssima Frequência
+
+                    </p>
+
                 </div>
 
+
+                <!-- Stat 3 -->
+
                 <div class="space-y-1">
+
                     <p class="font-display text-3xl sm:text-4xl font-extrabold text-imi-orange tracking-tight">
-                        100%
-                    </p>
-                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Foco em Segurança e Anatomia Vascular</p>
-                </div>
 
-                <div class="space-y-1">
-                    <p class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        +12.000
+                        100%
+
                     </p>
-                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Exames com Padrão de Excelência IMI</p>
+
+                    <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">
+
+                        Foco em Segurança e Anatomia Vascular
+
+                    </p>
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
-    <!-- SECTION: O QUE É O EXAME (O Exame) -->
+
+    <!-- O EXAME -->
+
     <section id="o-exame" class="py-24 bg-imi-dark relative">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
+
             <div class="text-center max-w-3xl mx-auto space-y-4">
+
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-imi-blue/20 text-imi-cyan text-xs font-semibold uppercase tracking-wider border border-imi-blue/40">
+
                     Tecnologia Médica de Ponta
+
                 </div>
+
+
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+
                     Por que o Ultrassom Dermatológico de Alta Resolução revolucionou a Medicina Estética?
+
                 </h2>
+
             </div>
 
-            <!-- Grid 3 Cards -->
+
+
+            <!-- Features Grid -->
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                
+
+
                 <!-- Card 1 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-imi-cyan/50 transition-all duration-300 group hover:-translate-y-1">
+
                     <div class="w-14 h-14 rounded-2xl bg-imi-cyan/10 border border-imi-cyan/30 flex items-center justify-center text-imi-cyan text-2xl mb-6 group-hover:bg-imi-cyan group-hover:text-imi-dark transition-all">
+
                         <i class="fa-solid fa-eye"></i>
+
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Visão Subcutânea em Camadas</h3>
+
+
+                    <h3 class="font-display text-xl font-bold text-white mb-3">
+
+                        Visão Subcutânea em Camadas
+
+                    </h3>
+
+
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Diferente do ultrassom convencional, os transdutores dermatológicos de alta frequência (18 a 26 MHz) permitem diferenciar epiderme, derme, tecido subcutâneo e o sistema muloaponeurótico (SMAS) com definição micrométrica.
+
+                        Diferente do ultrassom convencional, os transdutores
+                        dermatológicos de alta frequência (18 a 26 MHz)
+                        permitem diferenciar epiderme, derme, tecido subcutâneo
+                        e o sistema muloaponeurótico (SMAS) com alta definição.
+
                     </p>
+
                 </div>
+
+
 
                 <!-- Card 2 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-imi-orange/50 transition-all duration-300 group hover:-translate-y-1">
+
                     <div class="w-14 h-14 rounded-2xl bg-imi-orange/10 border border-imi-orange/30 flex items-center justify-center text-imi-orange text-2xl mb-6 group-hover:bg-imi-orange group-hover:text-imi-dark transition-all">
+
                         <i class="fa-solid fa-heart-pulse"></i>
+
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Mapeamento Vascular Doppler</h3>
+
+
+                    <h3 class="font-display text-xl font-bold text-white mb-3">
+
+                        Mapeamento Vascular Doppler
+
+                    </h3>
+
+
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Mapeia o trajeto das artérias faciais (como a artéria facial, labiais, supratroclear e temporal), identificando variações anatômicas do paciente para evitar oclusões e necrose tecidual.
+
+                        Mapeia o trajeto das artérias faciais,
+                        identificando variações anatômicas do paciente
+                        para evitar oclusões e necrose tecidual.
+
                     </p>
+
                 </div>
+
+
 
                 <!-- Card 3 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-imi-green/50 transition-all duration-300 group hover:-translate-y-1">
+
                     <div class="w-14 h-14 rounded-2xl bg-imi-green/10 border border-imi-green/30 flex items-center justify-center text-imi-green text-2xl mb-6 group-hover:bg-imi-green group-hover:text-imi-dark transition-all">
+
                         <i class="fa-solid fa-dna"></i>
+
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Identificação de Substâncias</h3>
+
+
+                    <h3 class="font-display text-xl font-bold text-white mb-3">
+
+                        Identificação de Substâncias
+
+                    </h3>
+
+
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Caracterização da substância injetada: Ácido Hialurônico, Hidroxiapatita de Cálcio (Radiesse), Ácido Poli-L-Láctico (Sculptra/Elleva), PMMA, Silicone Industrial ou Fios de Sustentação.
+
+                        Caracterização da substância injetada:
+                        Ácido Hialurônico, Hidroxiapatita de Cálcio (Radiesse),
+                        Ácido Poli-L-Láctico (Sculptra/Elleva), PMMA,
+                        Silicone Industrial ou Fios de Sustentação, entre outros.
+
                     </p>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- SECTION: APLICAÇÕES CLÍNICAS (Mapeamento Facial & Corporal) -->
+
+    <!-- APLICAÇÕES CLÍNICAS -->
+
     <section id="aplicacoes" class="py-24 bg-imi-card/50 relative border-t border-slate-800">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
+
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+
                 <div>
+
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-imi-orange/20 text-imi-orange text-xs font-semibold uppercase tracking-wider border border-imi-orange/30 mb-3">
+
                         Indicações do Exame
+
                     </div>
+
+
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                        Principais Aplicações do Mapeamento de Injetáveis
+
+                        Principais Aplicações do Ultrassom Dermatológico de Alta Frequência
+
                     </h2>
+
                 </div>
+
+
                 <p class="text-slate-400 text-sm max-w-md">
-                    O IMI oferece suporte completo antes de realizar um novo procedimento, no acompanhamento de rotina ou na resolução de intercorrências.
+
+                    O IMI oferece suporte completo antes de realizar
+                    um novo procedimento, no acompanhamento de rotina
+                    ou na resolução de intercorrências.
+
                 </p>
+
             </div>
 
-            <!-- Grid 2x2 Feature Layout -->
+
+
+            <!-- Clinical Applications Grid -->
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <!-- Card 1: Mapeamento Facial e Glúteo -->
+
+                <!-- Application 1 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-imi-cyan/40 transition-all duration-300">
+
                     <div>
+
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full">1. Mapeamento</span>
-                            
+
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full">
+
+                                1. Mapeamento
+
+                            </span>
+
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Mapeamento Facial e Glúteo</h3>
+
+
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">
+
+                            Mapeamento Facial, Cervical, Glúteo e Parede Abdominal
+
+                        </h3>
+
+
                         <p class="text-slate-300 text-sm leading-relaxed">
-                            Identifica e localiza preenchedores, bioestimuladores, fios e implantes.
+
+                            Identifica e localiza preenchedores,
+                            bioestimuladores, fios e implantes.
+
                         </p>
+
                     </div>
+
                 </div>
 
-                <!-- Card 2: Avaliação de Complicações Estéticas -->
+
+
+                <!-- Application 2 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-imi-orange/40 transition-all duration-300">
+
                     <div>
+
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-orange bg-imi-orange/10 px-3 py-1 rounded-full">2. Complicações</span>
-                            
+
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-orange bg-imi-orange/10 px-3 py-1 rounded-full">
+
+                                2. Complicações
+
+                            </span>
+
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação de Complicações Estéticas</h3>
+
+
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">
+
+                            Avaliação de Complicações Estéticas
+
+                        </h3>
+
+
                         <p class="text-slate-300 text-sm leading-relaxed">
+
                             Nódulos, ETIP, abscessos e oclusões vasculares.
+
                         </p>
+
                     </div>
+
                 </div>
 
-                <!-- Card 3: Avaliação e Acompanhamento de Lesões -->
+
+
+                <!-- Application 3 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-imi-green/40 transition-all duration-300">
+
                     <div>
+
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-green bg-imi-green/10 px-3 py-1 rounded-full">3. Lesões</span>
-                            
+
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-green bg-imi-green/10 px-3 py-1 rounded-full">
+
+                                3. Lesões
+
+                            </span>
+
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação e Acompanhamento de Lesões</h3>
+
+
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">
+
+                            Diagnóstico de lesões cutâneas
+
+                        </h3>
+
+
                         <p class="text-slate-300 text-sm leading-relaxed">
-                            Cistos, sólidas, vasculares, inflamatórias ou tumorais. Avaliação de patologias ungueais - análise detalhada das estruturas.
+
+                            Cistos, sólidas, vasculares, inflamatórias ou tumorais.
+                            Avaliação de patologias ungueais, couro cabeludo,
+                            nervos periféricos e lipedema.
+
                         </p>
+
                     </div>
+
                 </div>
 
-                <!-- Card 4: Avaliação Pré-Cirúrgica -->
+
+
+                <!-- Application 4 -->
+
                 <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-600/60 transition-all duration-300">
+
                     <div>
+
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">4. Pré-Cirúrgico</span>
+
+                            <span class="text-xs font-bold uppercase tracking-widest text-imi-dark bg-imi-yellow/90 px-3 py-1 rounded-full">
+
+                                4. Pré-Cirúrgico
+
+                            </span>
+
                             <i class="fa-solid fa-scalpel text-slate-600 text-2xl"></i>
+
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white mb-3">Avaliação Pré-Cirúrgica</h3>
+
+
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">
+
+                            Avaliação Pré-Cirúrgica
+
+                        </h3>
+
+
                         <p class="text-slate-300 text-sm leading-relaxed">
-                            Análise detalhada das camadas da pele e estruturas subjacentes.
+
+                            Análise detalhada das camadas da pele
+                            e estruturas subjacentes.
+
                         </p>
+
                     </div>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- SECTION: ÁREA DO MÉDICO SOLICITANTE (Para Médicos) -->
+
+    <!-- ÁREA DO MÉDICO SOLICITANTE -->
+
     <section id="para-medicos" class="py-24 bg-gradient-to-b from-imi-dark via-slate-950 to-imi-dark relative overflow-hidden">
-        
-        <!-- Background Accent Grid -->
+
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
+
             <div class="glass-panel rounded-3xl p-8 lg:p-12 border border-imi-blue/30 shadow-2xl relative overflow-hidden">
-                
-                <!-- Ribbon accent -->
+
                 <div class="absolute top-0 left-0 right-0 h-1 bg-imi-ribbon"></div>
 
+
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
+
+
+                    <!-- Content -->
+
                     <div class="lg:col-span-8 space-y-6">
+
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-imi-blue/30 text-imi-cyan text-xs font-semibold uppercase tracking-wider border border-imi-cyan/30">
+
                             <i class="fa-solid fa-user-doctor"></i>
+
                             Para Dermatologistas, Cirurgiões Plásticos e Médicos Injetores
+
                         </div>
+
 
                         <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+
                             Apoio Diagnóstico de Alta Precisão para a sua Prática Médica
+
                         </h2>
 
+
                         <p class="text-slate-300 text-base leading-relaxed">
-                            O Instituto Maringá de Imagem atua como um verdadeiro parceiro técnico da sua clínica. Disponibilizamos laudos iconográficos com documentação fotográfica ultrassonográfica, mapeamento Doppler colorido e canal direto de discussão de casos com nossos radiologistas especializados.
+
+                            O Instituto Maringá de Imagem atua como um verdadeiro
+                            parceiro técnico da sua clínica. Disponibilizamos
+                            laudos iconográficos com documentação fotográfica
+                            ultrassonográfica, mapeamento Doppler colorido e canal
+                            direto de discussão de casos com nossos radiologistas
+                            especializados.
+
                         </p>
+
                     </div>
+
+
+
+                    <!-- Solicitação -->
 
                     <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-imi-card/80 rounded-2xl border border-slate-800 text-center space-y-4">
+
                         <i class="fa-solid fa-file-medical text-4xl text-imi-cyan"></i>
-                        <h4 class="font-display font-bold text-lg text-white">Solicitação de Exame</h4>
+
+
+                        <h4 class="font-display font-bold text-lg text-white">
+
+                            Solicitação de Exame
+
+                        </h4>
+
+
                         <p class="text-xs text-slate-400">
-                            Acesse nosso modelo de pedido médico estruturado ou envie seus dados para cadastro como profissional parceiro.
+
+                            Acesse nosso modelo de pedido médico estruturado
+                            ou envie seus dados para cadastro como profissional parceiro.
+
                         </p>
-                        <a href="#agendamento" class="w-full bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-cyan-glow">
+
+
+                        <a
+                            href="#agendamento"
+                            class="w-full bg-imi-cyan hover:bg-sky-400 text-imi-dark font-bold text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-cyan-glow"
+                        >
+
                             Sou Médico Solicitante
+
                         </a>
+
                     </div>
 
                 </div>
@@ -542,160 +1093,412 @@
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- SECTION: DIFERENCIAIS (+70 Anos & Tradição IMI) -->
+
+    <!-- DIFERENCIAIS -->
+
     <section id="diferenciais" class="py-24 bg-imi-dark relative">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
+
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+
                 <span class="text-xs font-bold uppercase tracking-widest text-imi-green bg-imi-green/10 px-3.5 py-1 rounded-full border border-imi-green/20">
+
                     Tradição e Inovação Diagnóstica
+
                 </span>
+
+
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+
                     Por que escolher o IMI — Instituto Maringá de Imagem?
+
                 </h2>
+
             </div>
+
+
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Box 1 -->
+
+
+                <!-- Differential 1 -->
+
                 <div class="p-8 rounded-3xl bg-imi-card border border-slate-800 hover:border-imi-cyan/40 transition-all">
+
                     <div class="text-imi-cyan text-3xl mb-4">
+
                         <i class="fa-solid fa-building-columns"></i>
+
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white mb-2">+70 Anos de Pioneirismo</h3>
+
+
+                    <h3 class="font-display text-xl font-bold text-white mb-2">
+
+                        +70 Anos de Pioneirismo
+
+                    </h3>
+
+
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Fundado em 1954, o IMI possui a história mais sólida em diagnóstico por imagem de Maringá, unindo tradição técnica e constante atualização com tecnologias mundiais de ponta.
+
+                        Fundado em 1954, o IMI possui a história mais sólida
+                        em diagnóstico por imagem de Maringá, unindo tradição
+                        técnica e constante atualização com tecnologias
+                        mundiais de ponta.
+
                     </p>
+
                 </div>
 
-                <!-- Box 2 -->
+
+
+                <!-- Differential 2 -->
+
                 <div class="p-8 rounded-3xl bg-imi-card border border-slate-800 hover:border-imi-cyan/40 transition-all">
+
                     <div class="text-imi-cyan text-3xl mb-4">
+
                         <i class="fa-solid fa-user-doctor"></i>
+
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white mb-2">Corpo Clínico Especializado</h3>
+
+
+                    <h3 class="font-display text-xl font-bold text-white mb-2">
+
+                        Corpo Clínico Especializado
+
+                    </h3>
+
+
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Exames laudados e supervisionados por médicos radiologistas experientes, com Título de Especialista (RQE) e treinamento específico para ultrassonografia de alta frequência da pele.
+
+                        Exames laudados e supervisionados por médicos radiologistas
+                        experientes. Com Título de Especialista (RQE), pós-graduação
+                        e fellowship em clínicas e institutos referência na área.
+                        Possui treinamento específico para ultrassonografia
+                        de alta frequência da pele.
+
                     </p>
+
                 </div>
 
-                <!-- Box 3 -->
+
+
+                <!-- Differential 3 -->
+
                 <div class="p-8 rounded-3xl bg-imi-card border border-slate-800 hover:border-imi-cyan/40 transition-all">
+
                     <div class="text-imi-cyan text-3xl mb-4">
+
                         <i class="fa-solid fa-microscope"></i>
+
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white mb-2">Transdutores HD Dedicados</h3>
+
+
+                    <h3 class="font-display text-xl font-bold text-white mb-2">
+
+                        Transdutores HD Dedicados
+
+                    </h3>
+
+
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Equipamentos dotados de sondas de altíssima frequência (18-26 MHz), capazes de avaliar a derme milímetro a milímetro, essenciais para o mapeamento cutâneo e vascular estético.
+
+                        Equipamentos dotados de sondas de altíssima frequência
+                        (18-26 MHz), essenciais para o mapeamento cutâneo
+                        e vascular estético.
+
                     </p>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- SECTION: FORMULÁRIO DE AGENDAMENTO E ENCAMINHAMENTO MÉDICO -->
+
+    <!-- AGENDAMENTO -->
+
     <section id="agendamento" class="py-24 bg-gradient-to-b from-imi-card to-imi-dark relative border-t border-slate-800">
+
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
+
             <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-700/80 shadow-2xl relative overflow-hidden">
-                
-                <!-- Ribbon Header Accent -->
+
                 <div class="absolute top-0 left-0 right-0 h-1.5 bg-imi-ribbon"></div>
 
+
+
+                <!-- Form Header -->
+
                 <div class="text-center space-y-3 mb-10">
+
                     <span class="text-xs font-mono uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full border border-imi-cyan/20">
+
                         Atendimento Prioritário
+
                     </span>
+
+
                     <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+
                         Agende seu Ultrassom Dermatológico
+
                     </h2>
+
+
                     <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">
-                        Para garantir a máxima precisão diagnóstica, priorizamos o atendimento com encaminhamento médico. Preencha os dados abaixo e nossa equipe entrará em contato rápido via WhatsApp.
+
+                        Para garantir a máxima precisão diagnóstica,
+                        priorizamos o atendimento com encaminhamento médico.
+                        Preencha os dados abaixo e nossa equipe entrará
+                        em contato rápido via WhatsApp.
+
                     </p>
+
                 </div>
 
-                <form @submit.prevent="alert('Obrigado pelo contato! Nossa equipe de atendimento do IMI entrará em contato em instantes.')" class="space-y-6">
-                    
+
+
+                <!-- Formulário -->
+
+                <form
+                    @submit.prevent="alert('Obrigado pelo contato! Nossa equipe de atendimento do IMI entrará em contato em instantes.')"
+                    class="space-y-6"
+                >
+
+
+                    <!-- Name and Phone -->
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        
-                        <!-- Nome -->
+
+
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nome Completo *</label>
-                            <input type="text" required placeholder="Digite seu nome completo" class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all">
+
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+
+                                Nome Completo *
+
+                            </label>
+
+                            <input
+                                type="text"
+                                required
+                                placeholder="Digite seu nome completo"
+                                class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all"
+                            >
+
                         </div>
 
-                        <!-- WhatsApp -->
+
+
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">WhatsApp / Telefone *</label>
-                            <input type="tel" required placeholder="(44) 99999-9999" class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all">
+
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+
+                                WhatsApp / Telefone *
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                required
+                                placeholder="(44) 99999-9999"
+                                class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all"
+                            >
+
                         </div>
 
                     </div>
 
-                    <!-- Encaminhamento Médico Selector -->
+
+
+                    <!-- Encaminhamento -->
+
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Situação do Encaminhamento Médico *</label>
-                        <select required class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white outline-none transition-all">
-                            <option value="" disabled selected>Selecione uma opção...</option>
-                            <option value="possuo">Possuo encaminhamento médico (Dermatologista, Cirurgião Plástico, etc.)</option>
-                            <option value="medico">Sou médico solicitante e quero encaminhar um paciente</option>
-                            <option value="orientacao">Desejo orientação para obter encaminhamento / Exame preventivo</option>
+
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+
+                            Situação do Encaminhamento Médico *
+
+                        </label>
+
+
+                        <select
+                            required
+                            class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
+                        >
+
+                            <option value="" disabled selected>
+                                Selecione uma opção...
+                            </option>
+
+                            <option value="possuo">
+                                Possuo encaminhamento médico (Dermatologista, Cirurgião Plástico, etc.)
+                            </option>
+
+                            <option value="medico">
+                                Sou médico solicitante e quero encaminhar um paciente
+                            </option>
+
+                            <option value="orientacao">
+                                Desejo orientação para obter encaminhamento / Exame preventivo
+                            </option>
+
                         </select>
+
                     </div>
+
+
+
+                    <!-- Região e Médico -->
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        
-                        <!-- Região Anatômica -->
+
+
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Região de Interesse *</label>
-                            <select required class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white outline-none transition-all">
-                                <option value="" disabled selected>Selecione a região...</option>
-                                <option value="face">Mapeamento Facial Completo</option>
-                                <option value="labios">Lábios e Perioral</option>
-                                <option value="olheiras">Região Periocular / Olheiras</option>
-                                <option value="corporal">Mapeamento Corporal (Glúteos / Coxas / Braços)</option>
-                                <option value="complicacao">Investigação de Nódulo / Suspeita de Complicação</option>
+
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+
+                                Região de Interesse *
+
+                            </label>
+
+
+                            <select
+                                required
+                                class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
+                            >
+
+                                <option value="" disabled selected>
+                                    Selecione a região...
+                                </option>
+
+                                <option value="face">
+                                    Mapeamento Facial Completo
+                                </option>
+
+                                <option value="labios">
+                                    Lábios e Perioral
+                                </option>
+
+                                <option value="olheiras">
+                                    Região Periocular / Olheiras
+                                </option>
+
+                                <option value="corporal">
+                                    Mapeamento Corporal (Glúteos / Coxas / Braços)
+                                </option>
+
+                                <option value="complicacao">
+                                    Investigação de Nódulo / Suspeita de Complicação
+                                </option>
+
                             </select>
+
                         </div>
 
-                        <!-- Médico Solicitante (Opcional) -->
+
+
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Médico Solicitante (Se houver)</label>
-                            <input type="text" placeholder="Nome do seu médico / dermatologista" class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all">
+
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+
+                                Médico Solicitante (Se houver)
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                placeholder="Nome do seu médico / dermatologista"
+                                class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all"
+                            >
+
                         </div>
 
                     </div>
 
-                    <!-- Mensagem Opcional -->
+
+
+                    <!-- Observações -->
+
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Observações ou Dúvidas</label>
-                        <textarea rows="3" placeholder="Descreva brevemente o procedimento realizado ou motivo da consulta..." class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all"></textarea>
+
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+
+                            Observações ou Dúvidas
+
+                        </label>
+
+
+                        <textarea
+                            rows="3"
+                            placeholder="Descreva brevemente o procedimento realizado ou motivo da consulta..."
+                            class="w-full bg-imi-dark border border-slate-700 focus:border-imi-cyan focus:ring-1 focus:ring-imi-cyan rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all"
+                        ></textarea>
+
                     </div>
 
-                    <!-- CFM Disclaimer -->
+
+
+                    <!-- Legal Disclaimer -->
+
                     <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400 flex items-start gap-2.5">
+
                         <i class="fa-solid fa-circle-info text-imi-cyan text-sm mt-0.5"></i>
+
+
                         <span>
-                            <strong>Aviso Legal & Ética Médica (CFM):</strong> O IMI cumpre rigorosamente as diretrizes éticas do Conselho Federal de Medicina. O Ultrassom Dermatológico é um exame complementar diagnóstico e não substitui a consulta médica nem prescreve procedimentos estéticos.
+
+                            <strong>Aviso Legal & Ética Médica (CFM):</strong>
+
+                            O IMI cumpre rigorosamente as diretrizes éticas
+                            do Conselho Federal de Medicina. O Ultrassom
+                            Dermatológico é um exame complementar diagnóstico
+                            e não substitui a consulta médica nem prescreve
+                            procedimentos estéticos.
+
                         </span>
+
                     </div>
 
-                    <!-- Submit CTA -->
-                    <button type="submit" class="w-full btn-hover-swap bg-gradient-to-r from-imi-cyan via-sky-400 to-imi-cyan hover:from-sky-400 hover:to-imi-cyan text-imi-dark font-extrabold text-sm uppercase tracking-wider py-4 rounded-xl shadow-cyan-glow transition-all">
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="w-full btn-hover-swap bg-gradient-to-r from-imi-cyan via-sky-400 to-imi-cyan hover:from-sky-400 hover:to-imi-cyan text-imi-dark font-extrabold text-sm uppercase tracking-wider py-4 rounded-xl shadow-cyan-glow transition-all"
+                    >
+
                         <span class="btn-text-default">
+
                             Enviar e Solicitar Contato da Central
+
                             <i class="fa-solid fa-paper-plane ml-2"></i>
+
                         </span>
+
+
                         <span class="btn-text-hover">
+
                             Confirmar Solicitação de Agendamento
+
                             <i class="fa-solid fa-angles-right ml-2 animate-double-arrow"></i>
+
                         </span>
+
                     </button>
 
                 </form>
@@ -703,234 +1506,736 @@
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- SECTION: FAQ (Perguntas Frequentes) -->
+
+    <!-- FAQ -->
+
     <section id="duvidas" class="py-24 bg-imi-dark relative">
+
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
+
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span class="text-xs font-bold uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full border border-imi-cyan/20">Esclarecimentos</span>
-                <h2 class="font-display text-3xl font-bold text-white">Dúvidas Frequentes</h2>
-                <p class="text-slate-400 text-xs sm:text-sm">Respostas para as principais perguntas sobre o ultrassom dermatológico HD.</p>
+
+                <span class="text-xs font-bold uppercase tracking-widest text-imi-cyan bg-imi-cyan/10 px-3 py-1 rounded-full border border-imi-cyan/20">
+
+                    Esclarecimentos
+
+                </span>
+
+
+                <h2 class="font-display text-3xl font-bold text-white">
+
+                    Dúvidas Frequentes
+
+                </h2>
+
+
+                <p class="text-slate-400 text-xs sm:text-sm">
+
+                    Respostas para as principais perguntas
+                    sobre o ultrassom dermatológico HD.
+
+                </p>
+
             </div>
 
-            <div class="space-y-4" x-data="{ activeAccordion: null }">
-                
+
+
+            <div
+                class="space-y-4"
+                x-data="{ activeAccordion: null }"
+            >
+
+
                 <!-- FAQ 1 -->
+
                 <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-                    <button @click="activeAccordion = (activeAccordion === 1 ? null : 1)" class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
-                        <span>É obrigatório ter encaminhamento médico para realizar o exame?</span>
-                        <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 1 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+
+                    <button
+                        @click="activeAccordion = (activeAccordion === 1 ? null : 1)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none"
+                    >
+
+                        <span>
+                            É obrigatório ter encaminhamento médico para realizar o exame?
+                        </span>
+
+
+                        <i
+                            class="fa-solid transition-transform duration-200 text-imi-cyan"
+                            :class="activeAccordion === 1 ? 'fa-chevron-up' : 'fa-chevron-down'"
+                        ></i>
+
                     </button>
-                    <div x-show="activeAccordion === 1" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Priorizamos o atendimento com encaminhamento de um médico (dermatologista, cirurgião plástico ou médico injetor) para que possamos responder com precisão às dúvidas clínicas específicas do seu caso
+
+
+                    <div
+                        x-show="activeAccordion === 1"
+                        x-collapse
+                        class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3"
+                    >
+
+                        Priorizamos o atendimento com encaminhamento de um médico
+                        (dermatologista, cirurgião plástico ou médico injetor)
+                        para que possamos responder com precisão às dúvidas
+                        clínicas específicas do seu caso.
+
                     </div>
+
                 </div>
+
+
 
                 <!-- FAQ 2 -->
+
                 <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-                    <button @click="activeAccordion = (activeAccordion === 2 ? null : 2)" class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
-                        <span>O ultrassom dermatológico dói ou exige repouso?</span>
-                        <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 2 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+
+                    <button
+                        @click="activeAccordion = (activeAccordion === 2 ? null : 2)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none"
+                    >
+
+                        <span>
+                            O ultrassom dermatológico dói ou exige repouso?
+                        </span>
+
+
+                        <i
+                            class="fa-solid transition-transform duration-200 text-imi-cyan"
+                            :class="activeAccordion === 2 ? 'fa-chevron-up' : 'fa-chevron-down'"
+                        ></i>
+
                     </button>
-                    <div x-show="activeAccordion === 2" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Não. O exame é totalmente indolores, não invasivo e livre de radiação. É aplicado apenas um gel aquecido sobre a pele e deslizado suavemente o transdutor de alta frequência. O paciente pode retornar às suas atividades normais imediatamente.
+
+
+                    <div
+                        x-show="activeAccordion === 2"
+                        x-collapse
+                        class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3"
+                    >
+
+                        Não. O exame é totalmente indolor, não invasivo
+                        e livre de radiação. É aplicado apenas um gel
+                        aquecido sobre a pele e deslizado suavemente
+                        o transdutor de alta frequência. O paciente
+                        pode retornar às suas atividades normais imediatamente.
+
                     </div>
+
                 </div>
+
+
 
                 <!-- FAQ 3 -->
+
                 <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-                    <button @click="activeAccordion = (activeAccordion === 3 ? null : 3)" class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
-                        <span>O exame identifica produtos antigos injetados há anos?</span>
-                        <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 3 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+
+                    <button
+                        @click="activeAccordion = (activeAccordion === 3 ? null : 3)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none"
+                    >
+
+                        <span>
+                            O exame identifica produtos antigos injetados há anos?
+                        </span>
+
+
+                        <i
+                            class="fa-solid transition-transform duration-200 text-imi-cyan"
+                            :class="activeAccordion === 3 ? 'fa-chevron-up' : 'fa-chevron-down'"
+                        ></i>
+
                     </button>
-                    <div x-show="activeAccordion === 3" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Sim. Transdutores de 18-26 MHz conseguem caracterizar o padrão de ecogenicidade de produtos permanentes antigos (como PMMA e Silicone industrial), bem como depósitos remanescentes de Ácido Hialurônico ou Bioestimuladores de Colágeno.
+
+
+                    <div
+                        x-show="activeAccordion === 3"
+                        x-collapse
+                        class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3"
+                    >
+
+                        Sim. Transdutores de 18-26 MHz conseguem caracterizar
+                        o padrão de ecogenicidade de produtos permanentes antigos
+                        (como PMMA e Silicone industrial), bem como depósitos
+                        remanescentes de Ácido Hialurônico ou Bioestimuladores
+                        de Colágeno.
+
                     </div>
+
                 </div>
+
+
 
                 <!-- FAQ 4 -->
+
                 <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-                    <button @click="activeAccordion = (activeAccordion === 4 ? null : 4)" class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
-                        <span>Como é feita a entrega do laudo?</span>
-                        <i class="fa-solid transition-transform duration-200 text-imi-cyan" :class="activeAccordion === 4 ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+
+                    <button
+                        @click="activeAccordion = (activeAccordion === 4 ? null : 4)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none"
+                    >
+
+                        <span>
+                            Como é feita a entrega do laudo?
+                        </span>
+
+
+                        <i
+                            class="fa-solid transition-transform duration-200 text-imi-cyan"
+                            :class="activeAccordion === 4 ? 'fa-chevron-up' : 'fa-chevron-down'"
+                        ></i>
+
                     </button>
-                    <div x-show="activeAccordion === 4" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+
+
+                    <div
+                        x-show="activeAccordion === 4"
+                        x-collapse
+                        class="px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3"
+                    >
+
                         <p class="text-slate-300 text-sm leading-relaxed">
-                        O laudo Iconográfico é emitido com rigor técnico pelo corpo de médicos radiologistas do IMI, contendo imagens de alta definição, medições das camadas e avaliação Doppler. Ele fica disponível digitalmente no portal do IMI e pode ser compartilhado diretamente com seu médico.
-                    </p>
+
+                            O laudo Iconográfico é emitido com rigor técnico
+                            pelo corpo de médicos radiologistas do IMI,
+                            contendo imagens de alta definição, medições
+                            das camadas e avaliação Doppler. Ele fica
+                            disponível digitalmente no portal do IMI
+                            e pode ser compartilhado diretamente com seu médico.
+
+                        </p>
+
                     </div>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- SECTION: CORPO CLÍNICO & DIREÇÃO TÉCNICA -->
+
+    <!-- CORPO CLÍNICO -->
+
     <section class="py-16 bg-slate-900 border-t border-slate-800">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="font-display text-3xl font-bold text-white tracking-tight">Corpo Clínico & Responsabilidade Técnica</h2>
-                <p class="text-slate-400 text-sm mt-2">Médicos Especialistas em Ultrassonografia Dermatológica</p>
+
+                <h2 class="font-display text-3xl font-bold text-white tracking-tight">
+
+                    Corpo Clínico & Responsabilidade Técnica
+
+                </h2>
+
+
+                <p class="text-slate-400 text-sm mt-2">
+
+                    Médicos Especialistas em Ultrassonografia Dermatológica
+
+                </p>
+
             </div>
+
+
 
             <div class="grid md:grid-cols-3 gap-8">
+
+
                 <!-- Dr. Érico Diniz da Silva -->
+
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center">
-                    <img src="imgs/erico.png" alt="Dr. Érico Diniz da Silva" class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg">
-                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">Direção Técnica Médica</span>
-                    <h3 class="font-bold text-lg text-white">Dr. Érico Diniz da Silva</h3>
-                    <p class="text-xs text-slate-400 mb-4">CRM 11804/PR • RQE 4201</p>
+
+                    <img
+                        src="imgs/erico.png"
+                        alt="Dr. Érico Diniz da Silva"
+                        class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg"
+                    >
+
+
+                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">
+
+                        Direção Técnica Médica
+
+                    </span>
+
+
+                    <h3 class="font-bold text-lg text-white">
+
+                        Dr. Érico Diniz da Silva
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 mb-4">
+
+                        CRM 11804/PR • RQE 4201
+
+                    </p>
+
+
+
                     <ul class="text-xs text-slate-300 space-y-2 text-left w-full border-t border-slate-800 pt-4">
+
+
                         <li class="flex items-start gap-2">
+
                             <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
-                            <span>Curso de Extensão em Ultrassom Dermatológico - Skin Academy - Dra. Luciana Zattar</span>
+
+                            <span>
+
+                                Curso de Extensão em Ultrassom Dermatológico -
+                                Skin Academy - Dra. Luciana Zattar
+
+                            </span>
+
                         </li>
+
+
+
                         <li class="flex items-start gap-2">
+
                             <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
-                            <span>Fellowship de Ultrassom Dermatológico pelo Instituto Azulay RJ - Cetrus</span>
+
+                            <span>
+
+                                Fellowship de Ultrassom Dermatológico
+                                pelo Instituto Azulay RJ - Cetrus
+
+                            </span>
+
                         </li>
-                    </ul>
+
+
+
+
+
                 </div>
+
+
 
                 <!-- Dra. Francis Meire Cordeiro -->
+
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center">
-                    <img src="imgs/francis.png" alt="Dra. Francis Meire Cordeiro" class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg">
-                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">Corpo Clínico IMI Radiologia</span>
-                    <h3 class="font-bold text-lg text-white">Dra. Francis Meire Cordeiro</h3>
-                    <p class="text-xs text-slate-400 mb-4">CRM 15007/PR • RQE 12892</p>
+
+                    <img
+                        src="imgs/francis.png"
+                        alt="Dra. Francis Meire Cordeiro"
+                        class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg"
+                    >
+
+
+                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">
+
+                        Corpo Clínico IMI Radiologia
+
+                    </span>
+
+
+                    <h3 class="font-bold text-lg text-white">
+
+                        Dra. Francis Meire Cordeiro
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 mb-4">
+
+                        CRM 15007/PR • RQE 12892
+
+                    </p>
+
+
+
                     <ul class="text-xs text-slate-300 space-y-2 text-left w-full border-t border-slate-800 pt-4">
+
+
                         <li class="flex items-start gap-2">
+
                             <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
-                            <span>Pós Graduação em Ultrassonografia Dermatológica pela Cetrus SP.</span>
+
+                            <span>
+
+                                Pós Graduação em Ultrassonografia Dermatológica
+                                pela Cetrus SP.
+
+                            </span>
+
                         </li>
+
+
+
                         <li class="flex items-start gap-2">
+
                             <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
-                            <span>Fellowship em Ultrassonografia Dermatológica - Curitiba/PR.</span>
+
+                            <span>
+
+                                Fellowship em Ultrassonografia Dermatológica  -
+                                Clínica Ultra Diagnósticos - Curitiba/PR.
+
+                            </span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <!-- Dra. Carolina Kyrie Otani -->
+
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center">
-                    <img src="imgs/carolina.png" alt="Dra. Carolina Kyrie Otani" class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg">
-                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">Corpo Clínico IMI Radiologia</span>
-                    <h3 class="font-bold text-lg text-white">Dra. Carolina Kyrie Otani</h3>
-                    <p class="text-xs text-slate-400 mb-4">CRM 34.680/PR • RQE 27911</p>
+
+                    <img
+                        src="imgs/carolina.png"
+                        alt="Dra. Carolina Kyrie Otani"
+                        class="w-36 h-36 object-cover rounded-full border-2 border-imi-cyan mb-4 shadow-lg"
+                    >
+
+
+                    <span class="text-xs font-semibold text-imi-cyan uppercase tracking-wider mb-1">
+
+                        Corpo Clínico IMI Radiologia
+
+                    </span>
+
+
+                    <h3 class="font-bold text-lg text-white">
+
+                        Dra. Carolina Kyrie Otani
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 mb-4">
+
+                        CRM 34.680/PR • RQE 27911
+
+                    </p>
+
+
+
                     <ul class="text-xs text-slate-300 space-y-2 text-left w-full border-t border-slate-800 pt-4">
+
+
                         <li class="flex items-start gap-2">
+
                             <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
-                            <span>Pós Graduação em Ultrassonografia Dermatológica pela Cetrus SP.</span>
+
+                            <span>
+
+                                Pós Graduação em Ultrassonografia Dermatológica
+                                pela Cetrus SP.
+
+                            </span>
+
                         </li>
+
+
+
                         <li class="flex items-start gap-2">
+
                             <i class="fa-solid fa-circle-check text-imi-cyan text-xs mt-0.5"></i>
-                            <span>Fellowship em Ultrassonografia Dermatológica - Curitiba/PR.</span>
+
+                            <span>
+
+                                Fellowship em Ultrassonografia Dermatológica -
+                                Clínica Ultra Diagnósticos - Curitiba/PR.
+
+                            </span>
+
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
 
-    <!-- FOOTER (Strict CFM Compliance) -->
+
+    <!-- FOOTER -->
+
     <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 text-slate-400 text-xs relative">
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                
-                <!-- Col 1: Brand & Tradition -->
+
+
+                <!-- Brand -->
+
                 <div class="space-y-4 md:col-span-1">
-                    <!-- Logo do Footer -->
+
+
                     <a href="#" class="flex items-center group inline-flex">
+
                         <div class="relative flex items-center justify-center h-12 w-auto overflow-hidden">
-                            <img 
-                                src="imgs/logo.png" 
-                                alt="Logo IMI" 
+
+                            <img
+                                src="imgs/logo.png"
+                                alt="Logo IMI"
                                 class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                            />
+                            >
+
                         </div>
+
                     </a>
 
-                    <!-- Descrição -->
+
+
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        <strong class="text-slate-300">Instituto Maringá de Imagem</strong><br>
-                        Instituto Carlos Américo de Imagem S/S Ltda.<br>
-                        Mais de 70 anos de tradição, precisão diagnóstica e inovação em medicina diagnóstica em Maringá - PR.
+
+                        <strong class="text-slate-300">
+                            Instituto Maringá de Imagem
+                        </strong>
+
+                        <br>
+
+                        Instituto Carlos Américo de Imagem S/S Ltda.
+
+                        <br>
+
+                        Mais de 70 anos de tradição, precisão diagnóstica
+                        e inovação em medicina diagnóstica em Maringá - PR.
+
                     </p>
 
-                    <!-- Redes Sociais com Links -->
+
+
+                    <!-- Social Links -->
+
                     <div class="flex items-center gap-3 text-slate-400">
-                        <a href="https://www.instagram.com/institutoimagem/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+
+
+                        <a
+                            href="https://www.instagram.com/institutoimagem/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800"
+                        >
+
                             <i class="fa-brands fa-instagram"></i>
+
                         </a>
-                        <a href="https://www.facebook.com/people/Instituto-Maring%C3%A1-de-Imagem/100086106457224/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+
+
+
+                        <a
+                            href="https://www.facebook.com/people/Instituto-Maring%C3%A1-de-Imagem/100086106457224/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800"
+                        >
+
                             <i class="fa-brands fa-facebook"></i>
+
                         </a>
-                        <a href="/cdn-cgi/l/email-protection#254a50534c414a574c44654c4b56514c5150514a4c48444240480b4840410b4757" aria-label="E-mail Ouvidoria" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800">
+
+
+
+                        <a
+                            href="/cdn-cgi/l/email-protection#254a50534c414a574c44654c4b56514c5150514a4c48444240480b4840410b4757"
+                            aria-label="E-mail Ouvidoria"
+                            class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:text-imi-cyan hover:border-imi-cyan/50 transition-colors border border-slate-800"
+                        >
+
                             <i class="fa-solid fa-envelope"></i>
+
                         </a>
+
                     </div>
+
                 </div>
 
-                <!-- Col 2: Exames & Mapeamento -->
+
+
+                <!-- Exames -->
+
                 <div class="space-y-3">
-                    <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">Exames em Destaque</h4>
+
+                    <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">
+
+                        Exames em Destaque
+
+                    </h4>
+
+
                     <ul class="space-y-2 text-slate-400">
-                        <li><a href="#o-exame" class="hover:text-imi-cyan">Ultrassom Dermatológico HD (18-26 MHz)</a></li>
-                    </ul>
-                </div>
 
-                <!-- Col 3: Para Médicos & Unidades -->
-                <div class="space-y-3">
-                    <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">Atendimento & Localização</h4>
-                    
-                    <div class="space-y-2 text-[11px] text-slate-400 leading-relaxed">
-                        <!-- Unidade -->
-                        <div>
-                            <p class="font-semibold text-slate-200">Unidade Central Maringá</p>
-                            <p>Avenida Curitiba, 211 &bull; Zona 04</p>
-                            <p class="text-slate-500">CEP 87014-130 &bull; Maringá, PR</p>
-                        </div>
+                        <li>
 
-                        <!-- Central de Agendamento -->
-                        <div class="pt-2 border-t border-slate-800/60">
-                            <p class="text-slate-500 uppercase tracking-wider text-[10px] font-medium">Central de Agendamento / WhatsApp</p>
-                            <a href="https://wa.me/554430335500" target="_blank" rel="noopener noreferrer" class="font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-block mt-0.5">
-                                (44) 3033-5500
+                            <a href="#o-exame" class="hover:text-imi-cyan">
+
+                                Ultrassom Dermatológico HD (18-26 MHz)
+
                             </a>
-                        </div>
-                    </div>
+
+                        </li>
+
+                    </ul>
+
                 </div>
 
-                <!-- Col 4: CFM Compliance & Responsabilidade Técnica -->
+
+
+                <!-- Localização -->
+
+                <div class="space-y-3">
+
+                    <h4 class="font-display text-white font-bold text-sm uppercase tracking-wider">
+
+                        Atendimento & Localização
+
+                    </h4>
+
+
+
+                    <div class="space-y-2 text-[11px] text-slate-400 leading-relaxed">
+
+
+                        <div>
+
+                            <p class="font-semibold text-slate-200">
+
+                                Unidade Central Maringá
+
+                            </p>
+
+
+                            <p>
+                                Avenida Curitiba, 211 &bull; Zona 04
+                            </p>
+
+
+                            <p class="text-slate-500">
+
+                                CEP 87014-130 &bull; Maringá, PR
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="pt-2 border-t border-slate-800/60">
+
+                            <p class="text-slate-500 uppercase tracking-wider text-[10px] font-medium">
+
+                                Central de Agendamento / WhatsApp
+
+                            </p>
+
+
+                            <a
+                                href="https://wa.me/554430335500"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-block mt-0.5"
+                            >
+
+                                (44) 3033-5500
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Legal -->
+
                 <div class="space-y-3 bg-imi-card/50 p-4 rounded-2xl border border-slate-800/80">
+
                     <p class="text-[10px] text-slate-500 leading-relaxed">
-                         Este site possui caráter informativo e educacional. As informações contidas não substituem a consulta de avaliação médica presencial.
+
+                        Este site possui caráter informativo e educacional.
+                        As informações contidas não substituem a consulta
+                        de avaliação médica presencial.
+
                     </p>
+
                 </div>
 
             </div>
 
-            <!-- Bottom Copyright & Ribbon -->
+
+
+            <!-- Copyright -->
+
             <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-                <p>© 1954 - 2026 Instituto Maringá de Imagem (IMI). Todos os direitos reservados.</p>
+
+                <p>
+
+                    © 1954 - 2026 Instituto Maringá de Imagem (IMI).
+                    Todos os direitos reservados.
+
+                </p>
+
+
+
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="hover:underline">Política de Privacidade</a>
+
+                    <a href="#" class="hover:underline">
+                        Política de Privacidade
+                    </a>
+
                     <span>•</span>
-                    <a href="#" class="hover:underline">Termos de Uso CFM</a>
+
+                    <a href="#" class="hover:underline">
+                        Termos de Uso CFM
+                    </a>
+
                 </div>
+
             </div>
 
         </div>
 
-        <!-- Bottom IMI Multi-color Ribbon Bar -->
+
+        <!-- Bottom Ribbon -->
+
         <div class="ribbon-bar w-full absolute bottom-0 left-0"></div>
+
     </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"f0f03d0605bf45f1a3b17cf7d5e6861f","spa":2}' crossorigin="anonymous"></script>
+
+
+    <!-- Cloudflare Email Protection -->
+
+    <script
+        data-cfasync="false"
+        src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+
+    <!-- Cloudflare Web Analytics -->
+
+    <script
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920"
+        integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA=="
+        data-cf-beacon='{"version":"2024.11.0","token":"f0f03d0605bf45f1a3b17cf7d5e6861f","spa":2}'
+        crossorigin="anonymous"
+    ></script>
+
 </body>
 </html>
